@@ -1,0 +1,27 @@
+{
+  "_comment": "Amazon URL 映射表 - 将产品名称映射到 Amazon 完整URL或ASIN",
+  "_instructions": [
+    "1. 在Amazon.ca搜索产品",
+    "2. 打开产品页面，复制完整URL（推荐）或仅ASIN",
+    "3. 完整URL格式（推荐）: 'Product-Title/dp/B0XXXXX/ref=...' 或 'https://www.amazon.ca/...'",
+    "4. 简化格式: 仅ASIN如 'B0BQPV1RSR'",
+    "5. 将下面的 'YOUR_ASIN_HERE' 替换后保存，刷新浏览器即可"
+  ],
+  "_example": {
+    "使用完整URL（推荐）": "EF-ECOFLOW-Portable-Waterproof-Generator/dp/B0F13TX71J/ref=sr_1_1?...",
+    "使用ASIN": "B0BQPV1RSR",
+    "EcoFlow RIVER 2 Portable Power Station": "B0BQPV1RSR"
+  },
+  "mappings": {
+    "Jackery Explorer 300 Plus Portable Power Station": "YOUR_ASIN_HERE",
+    "Jackery Explorer 300D Portable Power Station": "YOUR_ASIN_HERE",
+    "Jackery Explorer 300 Portable Power Station": "YOUR_ASIN_HERE",
+    "EcoFlow RIVER 2 Portable Power Station": "B0BQPV1RSR",
+    "EcoFlow DELTA 2 Portable Power Station": "EF-ECOFLOW-Portable-Waterproof-Generator/dp/B0F13TX71J/ref=sr_1_1",
+    "EcoFlow RIVER 3 Plus Portable Power Station": "YOUR_ASIN_HERE",
+    "EcoFlow RIVER 3 Portable Power Station": "YOUR_ASIN_HERE",
+    "Anker SOLIX C300 Portable Power Station - 288Wh | 300W": "YOUR_ASIN_HERE",
+    "Anker SOLIX C300 DC Portable Power Station - 288Wh (90,000mAh) | 300W": "YOUR_ASIN_HERE",
+    "Anker SOLIX C200 DC Portable Power Station - 60,000mAh (192Wh) | 200W": "YOUR_ASIN_HERE"
+  }
+}

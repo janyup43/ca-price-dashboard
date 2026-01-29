@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA价格看板 - 加拿大便携式电源价格监控</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: rgba(255,255,255,0.03);
+            --border-color: rgba(255,255,255,0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-blue: #00d4ff;
+            --accent-green: #00ff88;
+            --accent-red: #ff4757;
+            --accent-orange: #ff9900;
+            --accent-purple: #7b2cbf;
+            --jackery: #ff6b35;
+            --ecoflow: #00d4ff;
+            --anker: #7b2cbf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            min-height: 100vh;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .header-left .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .date-picker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-card);
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .date-picker label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .date-picker input {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .last-updated {
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Capacity Tabs */
+        .capacity-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .capacity-tab {
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .capacity-tab:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .capacity-tab.active {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(123,44,191,0.15));
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .capacity-tab .count {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Comparison Table */
+        .comparison-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: left;
+            background: rgba(255,255,255,0.02);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table td {
+            padding: 18px;
+            border-top: 1px solid var(--border-color);
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .brand-cell {
+            min-width: 200px;
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .brand-logo.jackery { background: var(--jackery); }
+        .brand-logo.ecoflow { background: var(--ecoflow); }
+        .brand-logo.anker { background: var(--anker); }
+
+        .product-name {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .product-capacity-tag {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: rgba(255,255,255,0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .price-cell {
+            text-align: right;
+        }
+
+        .current-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .original-price {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .discount-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .price-change {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        .price-change.down { color: var(--accent-green); }
+        .price-change.up { color: var(--accent-red); }
+        .price-change.same { color: var(--text-secondary); }
+
+        .source-tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+        }
+
+        .source-tag.official {
+            background: rgba(0,212,255,0.2);
+            color: var(--accent-blue);
+        }
+
+        .source-tag.amazon {
+            background: rgba(255,153,0,0.2);
+            color: var(--accent-orange);
+        }
+
+        .best-deal-row {
+            background: rgba(0,255,136,0.05) !important;
+        }
+
+        .best-deal-badge {
+            background: var(--accent-green);
+            color: #000;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Right Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Chart Card */
+        .chart-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+        }
+
+        .chart-container {
+            height: 250px;
+            margin-top: 15px;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-card.jackery .stat-value { color: var(--jackery); }
+        .stat-card.ecoflow .stat-value { color: var(--ecoflow); }
+        .stat-card.anker .stat-value { color: var(--anker); }
+        .stat-card.best .stat-value { color: var(--accent-green); }
+
+        /* Screenshot Gallery */
+        .screenshot-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .screenshot-item {
+            aspect-ratio: 16/9;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            font-size: 0.7rem;
+        }
+
+        .no-screenshot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        /* History Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: auto;
+            padding: 30px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .history-chart {
+            height: 300px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .capacity-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 10px;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        /* 性能优化 */
+        .comparison-table {
+            contain: layout style paint;
+            will-change: contents;
+        }
+
+        .comparison-table tbody {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .comparison-table tr {
+            contain: layout style paint;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>CA价格看板</h1>
+                <p class="subtitle">加拿大便携式电源价格监控 - EcoFlow | Jackery | Anker</p>
+            </div>
+            <div class="header-right">
+                <div class="date-picker">
+                    <label>Date:</label>
+                    <input type="date" id="datePicker">
+                </div>
+                <div class="last-updated" id="lastUpdated">Loading...</div>
+            </div>
+        </header>
+
+        <!-- Capacity Tabs -->
+        <div class="capacity-tabs" id="capacityTabs">
+            <button class="capacity-tab active" data-capacity="all">
+                All Products <span class="count" id="countAll">-</span>
+            </button>
+            <button class="capacity-tab" data-capacity="mini">
+                200-300 Wh <span class="count" id="countMini">-</span>
+            </button>
+            <button class="capacity-tab" data-capacity="small">
+                500-800 Wh <span class="count" id="countSmall">-</span>
+            </button>
+            <button class="capacity-tab" data-capacity="medium">
+                1000-1500 Wh <span class="count" id="countMedium">-</span>
+            </button>
+            <button class="capacity-tab" data-capacity="large">
+                2000-2500 Wh <span class="count" id="countLarge">-</span>
+            </button>
+            <button class="capacity-tab" data-capacity="xlarge">
+                3000+ Wh <span class="count" id="countXlarge">-</span>
+            </button>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Comparison Table -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Price Comparison</h2>
+                        <p class="card-subtitle" id="selectedDateLabel">Today's Prices</p>
+                    </div>
+                    <div id="capacityRangeLabel" style="color: var(--accent-blue);">All Capacities</div>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>vs Yesterday</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody">
+                        <!-- Products will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card jackery">
+                        <div class="stat-value" id="jackeryCount">-</div>
+                        <div class="stat-label">Jackery</div>
+                    </div>
+                    <div class="stat-card ecoflow">
+                        <div class="stat-value" id="ecoflowCount">-</div>
+                        <div class="stat-label">EcoFlow</div>
+                    </div>
+                    <div class="stat-card anker">
+                        <div class="stat-value" id="ankerCount">-</div>
+                        <div class="stat-label">Anker</div>
+                    </div>
+                    <div class="stat-card best">
+                        <div class="stat-value" id="bestDiscount">-</div>
+                        <div class="stat-label">Best Discount</div>
+                    </div>
+                </div>
+
+                <!-- Price Trend Chart -->
+                <div class="chart-card">
+                    <div class="card-header" style="padding: 0; border: none;">
+                        <h3 class="card-title">Price Trend (7 Days)</h3>
+                        <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 5px 10px; border-radius: 6px;">
+                            <option value="all">All Brands</option>
+                            <option value="Jackery">Jackery</option>
+                            <option value="EcoFlow">EcoFlow</option>
+                            <option value="Anker">Anker</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Screenshots -->
+                <div class="screenshot-card">
+                    <h3 class="card-title">Daily Screenshots</h3>
+                    <div class="screenshot-grid" id="screenshotGrid">
+                        <div class="screenshot-item no-screenshot">No screenshots</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div class="modal" id="historyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalProductName">Product History</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="history-chart">
+                <canvas id="historyChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let pricesData = null;
+        let historyData = null;
+        let screenshotsData = null;
+        let selectedDate = new Date().toISOString().split('T')[0];
+        let selectedCapacity = 'all';
+        let trendChart = null;
+        let historyChart = null;
+
+        // Capacity ranges
+        const CAPACITY_RANGES = {
+            'all': { min: 0, max: Infinity, label: 'All Capacities' },
+            'mini': { min: 200, max: 300, label: '200-300 Wh' },
+            'small': { min: 500, max: 800, label: '500-800 Wh' },
+            'medium': { min: 1000, max: 1500, label: '1000-1500 Wh' },
+            'large': { min: 2000, max: 2500, label: '2000-2500 Wh' },
+            'xlarge': { min: 3000, max: Infinity, label: '3000+ Wh' },
+        };
+
+        // Parse capacity from string
+        function parseCapacity(capacityStr) {
+            if (!capacityStr || capacityStr === 'N/A') return 0;
+            const match = capacityStr.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 0;
+        }
+
+        // Filter products by capacity range
+        function filterByCapacity(products, range) {
+            if (range === 'all') return products;
+            const { min, max } = CAPACITY_RANGES[range];
+            return products.filter(p => {
+                const cap = parseCapacity(p.capacity);
+                return cap >= min && cap <= max;
+            });
+        }
+
+        // Load data
+        let amazonAsins = {};
+        async function loadData() {
+            try {
+                const [pricesRes, historyRes] = await Promise.all([
+                    fetch('data/prices.json'),
+                    fetch('data/history.json')
+                ]);
+                pricesData = await pricesRes.json();
+                historyData = await historyRes.json();
+
+                // Try to load screenshots data
+                try {
+                    const ssRes = await fetch('data/screenshots.json');
+                    screenshotsData = await ssRes.json();
+                } catch (e) {
+                    screenshotsData = { screenshots: [] };
+                }
+
+                // Try to load Amazon ASINs
+                try {
+                    const asinRes = await fetch('data/amazon_asins.json');
+                    const asinData = await asinRes.json();
+                    amazonAsins = asinData.mappings || {};
+                } catch (e) {
+                    console.log('Amazon ASIN mapping not found, using search links');
+                    amazonAsins = {};
+                }
+
+                initializeDatePicker();
+                renderDashboard();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('comparisonBody').innerHTML =
+                    '<tr><td colspan="4" style="text-align: center; color: var(--accent-red);">Failed to load data</td></tr>';
+            }
+        }
+
+        // Initialize date picker
+        function initializeDatePicker() {
+            const picker = document.getElementById('datePicker');
+            const dates = historyData.records.map(r => r.date);
+
+            if (dates.length > 0) {
+                picker.min = dates[0];
+                picker.max = dates[dates.length - 1];
+                picker.value = dates[dates.length - 1];
+                selectedDate = picker.value;
+            } else {
+                picker.value = new Date().toISOString().split('T')[0];
+            }
+
+            picker.addEventListener('change', (e) => {
+                selectedDate = e.target.value;
+                renderDashboard();
+            });
+        }
+
+        // Render dashboard
+        function renderDashboard() {
+            updateLastUpdated();
+            updateCapacityCounts();
+            updateStats();
+            renderComparison();
+            renderTrendChart();
+            renderScreenshots();
+        }
+
+        // Update last updated
+        function updateLastUpdated() {
+            const record = historyData.records.find(r => r.date === selectedDate);
+            if (record) {
+                const date = new Date(record.timestamp);
+                document.getElementById('lastUpdated').textContent =
+                    `Updated: ${date.toLocaleDateString('en-CA')} ${date.toLocaleTimeString('en-CA', {hour: '2-digit', minute: '2-digit'})}`;
+                document.getElementById('selectedDateLabel').textContent =
+                    selectedDate === new Date().toISOString().split('T')[0] ? "Today's Prices" : `Prices on ${selectedDate}`;
+            }
+        }
+
+        // Update capacity counts
+        function updateCapacityCounts() {
+            const products = pricesData.products;
+            document.getElementById('countAll').textContent = products.length;
+            document.getElementById('countMini').textContent = filterByCapacity(products, 'mini').length;
+            document.getElementById('countSmall').textContent = filterByCapacity(products, 'small').length;
+            document.getElementById('countMedium').textContent = filterByCapacity(products, 'medium').length;
+            document.getElementById('countLarge').textContent = filterByCapacity(products, 'large').length;
+            document.getElementById('countXlarge').textContent = filterByCapacity(products, 'xlarge').length;
+        }
+
+        // Update stats
+        function updateStats() {
+            const products = filterByCapacity(pricesData.products, selectedCapacity);
+
+            const jackeryCount = products.filter(p => p.brand === 'Jackery').length;
+            const ecoflowCount = products.filter(p => p.brand === 'EcoFlow').length;
+            const ankerCount = products.filter(p => p.brand === 'Anker').length;
+            const maxDiscount = Math.max(...products.map(p => p.discount_percent || 0), 0);
+
+            document.getElementById('jackeryCount').textContent = jackeryCount;
+            document.getElementById('ecoflowCount').textContent = ecoflowCount;
+            document.getElementById('ankerCount').textContent = ankerCount;
+            document.getElementById('bestDiscount').textContent = maxDiscount > 0 ? maxDiscount + '%' : '-';
+        }
+
+        // Get price for specific date
+        function getPriceForDate(brand, name, date) {
+            const record = historyData.records.find(r => r.date === date);
+            if (!record) return null;
+            const key = `${brand}|${name}`;
+            return record.prices[key] || null;
+        }
+
+        // Get price change
+        function getPriceChange(brand, name) {
+            const records = historyData.records;
+            const dateIndex = records.findIndex(r => r.date === selectedDate);
+
+            if (dateIndex <= 0) return { change: 0, type: 'same' };
+
+            const today = getPriceForDate(brand, name, selectedDate);
+            const yesterday = getPriceForDate(brand, name, records[dateIndex - 1].date);
+
+            if (!today || !yesterday) return { change: 0, type: 'same' };
+
+            const change = today.current_price - yesterday.current_price;
+            return {
+                change: change,
+                type: change < 0 ? 'down' : change > 0 ? 'up' : 'same',
+                percent: yesterday.current_price > 0 ?
+                    Math.abs((change / yesterday.current_price) * 100).toFixed(1) : 0
+            };
+        }
+
+
+        // 性能优化：防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // 性能优化：Amazon链接缓存
+        const amazonLinkCache = new Map();
+
+        function generateAmazonLink(productName, brand) {
+            const cacheKey = productName;
+            if (amazonLinkCache.has(cacheKey)) {
+                return amazonLinkCache.get(cacheKey);
+            }
+
+            const urlOrAsin = amazonAsins[productName];
+            let result;
+
+            if (!urlOrAsin || urlOrAsin === 'YOUR_ASIN_HERE') {
+                result = `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(brand + ' ' + productName)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
+            } else {
+                let amazonUrl;
+                if (urlOrAsin.startsWith('http://') || urlOrAsin.startsWith('https://')) {
+                    amazonUrl = urlOrAsin;
+                } else if (urlOrAsin.includes('/dp/')) {
+                    amazonUrl = 'https://www.amazon.ca/' + urlOrAsin;
+                } else if (urlOrAsin.match(/^B[0-9A-Z]{9}$/)) {
+                    amazonUrl = 'https://www.amazon.ca/dp/' + urlOrAsin;
+                } else {
+                    result = `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(brand + ' ' + productName)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
+                    amazonLinkCache.set(cacheKey, result);
+                    return result;
+                }
+                result = `<a href="${amazonUrl}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon →</a>`;
+            }
+
+            amazonLinkCache.set(cacheKey, result);
+            return result;
+        }
+
+        // Render comparison table
+        function renderComparison() {
+            let products = [...pricesData.products];
+            products = filterByCapacity(products, selectedCapacity);
+
+            // Update capacity label
+            document.getElementById('capacityRangeLabel').textContent = CAPACITY_RANGES[selectedCapacity].label;
+
+            // 智能排序：品牌 -> 价格
+            products.sort((a, b) => {
+                // 1. 按品牌排序 (EcoFlow -> Jackery -> Anker)
+                const brandOrder = { 'EcoFlow': 1, 'Jackery': 2, 'Anker': 3 };
+                const brandDiff = (brandOrder[a.brand] || 99) - (brandOrder[b.brand] || 99);
+                if (brandDiff !== 0) return brandDiff;
+
+                // 2. 在每个品牌内按价格排序 (价格低的在前)
+                return a.current_price - b.current_price;
+            });
+
+            // Find best deal per capacity range
+            const bestDealPrice = products.length > 0 ?
+                Math.min(...products.map(p => p.current_price)) : Infinity;
+
+            const tbody = document.getElementById('comparisonBody');
+            tbody.innerHTML = products.map(p => {
+                const priceChange = getPriceChange(p.brand, p.name);
+                const isBestDeal = p.current_price === bestDealPrice;
+                const source = p.source || 'official';
+
+                const changeIcon = priceChange.type === 'down' ? '↓' :
+                                   priceChange.type === 'up' ? '↑' : '—';
+                const changeText = priceChange.change !== 0 ?
+                    `$${Math.abs(priceChange.change).toFixed(0)} (${priceChange.percent}%)` : 'No change';
+
+                return `
+                    <tr class="${isBestDeal ? 'best-deal-row' : ''}" onclick="showHistory('${p.brand}', '${p.name.replace(/'/g, "\\'")}')">
+                        <td class="brand-cell">
+                            <div class="brand-header">
+                                <div class="brand-logo ${p.brand.toLowerCase()}">${p.brand[0]}</div>
+                                <span style="color: var(--${p.brand.toLowerCase()})">${p.brand}</span>
+                                ${isBestDeal ? '<span class="best-deal-badge">BEST</span>' : ''}
+                            </div>
+                            <div class="product-name">${p.name}</div>
+                            <span class="product-capacity-tag">${p.capacity}</span>
+                        </td>
+                        <td class="price-cell">
+                            <span class="current-price">$${p.current_price.toLocaleString()}</span>
+                            ${p.original_price ? `<span class="original-price">$${p.original_price.toLocaleString()}</span>` : ''}
+                            ${p.discount_percent ? `<div class="discount-tag">-${p.discount_percent}%</div>` : ''}
+                        </td>
+                        <td>
+                            <div class="price-change ${priceChange.type}">
+                                <span>${changeIcon}</span>
+                                <span>${changeText}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="source-tag ${source}">${source === 'amazon' ? 'Amazon' : 'Official'}</span>
+                            <a href="${p.url}" target="_blank" style="color: var(--accent-blue); font-size: 0.8rem; display: block; margin-top: 5px;">Official →</a>
+                            ${(() => {
+                                const urlOrAsin = amazonAsins[p.name];
+                                if (!urlOrAsin || urlOrAsin === 'YOUR_ASIN_HERE') {
+                                    // 没有配置，使用搜索
+                                    return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
+                                }
+
+                                let amazonUrl;
+                                if (urlOrAsin.startsWith('http://') || urlOrAsin.startsWith('https://')) {
+                                    // 完整URL，直接使用
+                                    amazonUrl = urlOrAsin;
+                                } else if (urlOrAsin.includes('/dp/')) {
+                                    // 部分URL（如 Product-Title/dp/B0XXX/ref=...），补充域名
+                                    amazonUrl = 'https://www.amazon.ca/' + urlOrAsin;
+                                } else if (urlOrAsin.match(/^B[0-9A-Z]{9}$/)) {
+                                    // 纯ASIN格式，使用简化链接
+                                    amazonUrl = 'https://www.amazon.ca/dp/' + urlOrAsin;
+                                } else {
+                                    // 无法识别格式，fallback到搜索
+                                    return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
+                                }
+
+                                return `<a href="${amazonUrl}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon →</a>`;
+                            })()}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            if (products.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-secondary); padding: 40px;">No products in this capacity range</td></tr>';
+            }
+        }
+
+        // Render trend chart
+        function renderTrendChart() {
+            const ctx = document.getElementById('trendChart').getContext('2d');
+            const selectedBrand = document.getElementById('chartBrandSelect').value;
+
+            if (trendChart) trendChart.destroy();
+
+            const records = historyData.records.slice(-7);
+            const labels = records.map(r => r.date.slice(5));
+
+            const colors = {
+                'Jackery': '#ff6b35',
+                'EcoFlow': '#00d4ff',
+                'Anker': '#7b2cbf'
+            };
+
+            let datasets = [];
+
+            if (selectedBrand === 'all') {
+                ['Jackery', 'EcoFlow', 'Anker'].forEach(brand => {
+                    const brandProducts = filterByCapacity(
+                        pricesData.products.filter(p => p.brand === brand),
+                        selectedCapacity
+                    );
+
+                    if (brandProducts.length === 0) return;
+
+                    const data = records.map(record => {
+                        let total = 0, count = 0;
+                        brandProducts.forEach(p => {
+                            const key = `${p.brand}|${p.name}`;
+                            if (record.prices[key]) {
+                                total += record.prices[key].current_price;
+                                count++;
+                            }
+                        });
+                        return count > 0 ? Math.round(total / count) : null;
+                    });
+
+                    datasets.push({
+                        label: brand,
+                        data: data,
+                        borderColor: colors[brand],
+                        backgroundColor: colors[brand] + '20',
+                        tension: 0.3,
+                        fill: false,
+                        pointRadius: 4,
+                    });
+                });
+            } else {
+                const brandProducts = filterByCapacity(
+                    pricesData.products.filter(p => p.brand === selectedBrand),
+                    selectedCapacity
+                );
+
+                brandProducts.forEach(p => {
+                    const data = records.map(record => {
+                        const key = `${p.brand}|${p.name}`;
+                        return record.prices[key]?.current_price || null;
+                    });
+
+                    datasets.push({
+                        label: p.name.substring(0, 20),
+                        data: data,
+                        borderColor: colors[selectedBrand],
+                        tension: 0.3,
+                        fill: false,
+                        pointRadius: 3,
+                    });
+                });
+            }
+
+            trendChart = new Chart(ctx, {
+                type: 'line',
+                data: { labels, datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: datasets.length <= 5,
+                            labels: { color: '#a0a0a0', font: { size: 10 } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#a0a0a0' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: {
+                                color: '#a0a0a0',
+                                callback: value => '$' + value.toLocaleString()
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render screenshots
+        function renderScreenshots() {
+            const grid = document.getElementById('screenshotGrid');
+            const dateScreenshots = screenshotsData.screenshots.filter(s => s.date === selectedDate);
+
+            if (dateScreenshots.length === 0) {
+                grid.innerHTML = '<div class="screenshot-item no-screenshot">No screenshots for this date</div>';
+                return;
+            }
+
+            grid.innerHTML = dateScreenshots.map(s => `
+                <div class="screenshot-item" onclick="window.open('${s.path}', '_blank')">
+                    <img src="${s.thumbnail || s.path}" alt="${s.brand}">
+                    <div class="overlay">${s.brand} - ${s.time}</div>
+                </div>
+            `).join('');
+        }
+
+        // Show product history modal
+        function showHistory(brand, name) {
+            const modal = document.getElementById('historyModal');
+            document.getElementById('modalProductName').textContent = `${brand} - ${name}`;
+            modal.classList.add('active');
+
+            const ctx = document.getElementById('historyChart').getContext('2d');
+            if (historyChart) historyChart.destroy();
+
+            const records = historyData.records;
+            const key = `${brand}|${name}`;
+
+            const labels = records.map(r => r.date);
+            const data = records.map(r => r.prices[key]?.current_price || null);
+
+            const colors = {
+                'Jackery': '#ff6b35',
+                'EcoFlow': '#00d4ff',
+                'Anker': '#7b2cbf'
+            };
+
+            historyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Price (CAD)',
+                        data: data,
+                        borderColor: colors[brand] || '#00d4ff',
+                        backgroundColor: (colors[brand] || '#00d4ff') + '20',
+                        tension: 0.3,
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#a0a0a0' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: {
+                                color: '#a0a0a0',
+                                callback: value => '$' + value.toLocaleString()
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('historyModal').classList.remove('active');
+        }
+
+        // Setup capacity tabs
+        document.querySelectorAll('.capacity-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.capacity-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                selectedCapacity = tab.dataset.capacity;
+                renderDashboard();
+            });
+        });
+
+        // Chart brand select
+        document.getElementById('chartBrandSelect').addEventListener('change', renderTrendChart);
+
+        // Close modal on outside click
+        document.getElementById('historyModal').addEventListener('click', (e) => {
+            if (e.target.id === 'historyModal') closeModal();
+        });
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

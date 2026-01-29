@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+debug-*.png
+debug-captcha-*.png
+
+# Backups
+*.backup
+*.backup.*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+.cache/
+
+# Keep data but ignore large files
+data/screenshots/**/*.png
+data/screenshots/**/*.jpg
+!data/screenshots/.gitkeep
+
+# Local tunnel files
+tunnel*.log
+launchd*.log
+nohup.out

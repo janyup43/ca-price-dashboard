@@ -1,0 +1,73 @@
+name: Daily Price Scraper
+
+on:
+  schedule:
+    # 在加拿大东部时间每天 00:00 运行 (UTC 05:00)
+    # 注意：夏令时期间是 UTC 04:00，冬令时是 UTC 05:00
+    # 这里设置为 UTC 05:00，对应冬令时的午夜
+    - cron: '0 5 * * *'
+  
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  scrape-prices:
+    runs-on: ubuntu-latest
+    
+    env:
+      TZ: America/Toronto  # 加拿大东部时区
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Install Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+      
+      - name: Display current time
+        run: |
+          echo "UTC Time: $(date -u)"
+          echo "Toronto Time: $(TZ=America/Toronto date)"
+          echo "Current Toronto Date: $(TZ=America/Toronto date +%Y-%m-%d)"
+      
+      - name: Run price scraper
+        run: |
+          python scraper_stealth.py
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/prices.json data/history.json data/screenshots.json data/screenshots/
+          
+          # 检查是否有变更
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            TORONTO_DATE=$(TZ=America/Toronto date +%Y-%m-%d)
+            git commit -m "🤖 Auto update prices - ${TORONTO_DATE}"
+            git push
+          fi
+      
+      - name: Upload artifacts (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-logs
+          path: |
+            *.log
+            data/screenshots/
+          retention-days: 7
