@@ -1,6 +1,510 @@
 {
-  "last_updated": "2026-01-30T03:40:09.796233",
+  "last_updated": "2026-01-30T06:28:47.445800",
   "screenshots": [
+    {
+      "date": "2026-01-30",
+      "time": "06:28:34",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-28-34.png",
+      "timestamp": "2026-01-30T06:28:34.502105"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:28:14",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-28-14.png",
+      "timestamp": "2026-01-30T06:28:14.208379"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:27:55",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-27-55.png",
+      "timestamp": "2026-01-30T06:27:55.456802"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:27:37",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-27-37.png",
+      "timestamp": "2026-01-30T06:27:37.195767"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:27:22",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-27-22.png",
+      "timestamp": "2026-01-30T06:27:22.763235"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:27:07",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-27-07.png",
+      "timestamp": "2026-01-30T06:27:07.428552"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:26:49",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-26-49.png",
+      "timestamp": "2026-01-30T06:26:49.647132"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:26:30",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-26-30.png",
+      "timestamp": "2026-01-30T06:26:30.939806"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:26:08",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-26-08.png",
+      "timestamp": "2026-01-30T06:26:08.377784"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:25:46",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-25-46.png",
+      "timestamp": "2026-01-30T06:25:46.134704"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:25:28",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-25-28.png",
+      "timestamp": "2026-01-30T06:25:28.787914"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:25:09",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-25-09.png",
+      "timestamp": "2026-01-30T06:25:09.577193"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:24:53",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-24-53.png",
+      "timestamp": "2026-01-30T06:24:53.911244"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:24:34",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-24-34.png",
+      "timestamp": "2026-01-30T06:24:34.581526"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:24:14",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-24-14.png",
+      "timestamp": "2026-01-30T06:24:14.138275"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:24:00",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-24-00.png",
+      "timestamp": "2026-01-30T06:24:00.627992"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:23:44",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-23-44.png",
+      "timestamp": "2026-01-30T06:23:44.254689"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:23:24",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-23-24.png",
+      "timestamp": "2026-01-30T06:23:24.272993"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:23:01",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-23-01.png",
+      "timestamp": "2026-01-30T06:23:01.044289"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:22:43",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-22-43.png",
+      "timestamp": "2026-01-30T06:22:43.252826"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:22:17",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-22-17.png",
+      "timestamp": "2026-01-30T06:22:17.169434"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:22:00",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-22-00.png",
+      "timestamp": "2026-01-30T06:22:00.444842"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:21:41",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-21-41.png",
+      "timestamp": "2026-01-30T06:21:41.886361"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:21:22",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-21-22.png",
+      "timestamp": "2026-01-30T06:21:22.046447"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:20:56",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-20-56.png",
+      "timestamp": "2026-01-30T06:20:56.677801"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:20:38",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-20-38.png",
+      "timestamp": "2026-01-30T06:20:38.506779"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:20:16",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-20-16.png",
+      "timestamp": "2026-01-30T06:20:16.823626"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:19:56",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-19-56.png",
+      "timestamp": "2026-01-30T06:19:56.327766"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:19:29",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-19-29.png",
+      "timestamp": "2026-01-30T06:19:29.800969"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:19:08",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-19-08.png",
+      "timestamp": "2026-01-30T06:19:08.711679"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:18:47",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-18-47.png",
+      "timestamp": "2026-01-30T06:18:47.219682"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:18:28",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-18-28.png",
+      "timestamp": "2026-01-30T06:18:28.817380"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:18:06",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-18-06.png",
+      "timestamp": "2026-01-30T06:18:06.389477"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:17:51",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-17-51.png",
+      "timestamp": "2026-01-30T06:17:51.113561"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:17:27",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-17-27.png",
+      "timestamp": "2026-01-30T06:17:27.753933"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:17:09",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-17-09.png",
+      "timestamp": "2026-01-30T06:17:09.189564"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:16:42",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-16-42.png",
+      "timestamp": "2026-01-30T06:16:42.496358"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:16:25",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-16-25.png",
+      "timestamp": "2026-01-30T06:16:25.945456"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:16:06",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-16-06.png",
+      "timestamp": "2026-01-30T06:16:06.590760"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:15:50",
+      "brand": "Anker",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Anker_official_06-15-50.png",
+      "timestamp": "2026-01-30T06:15:50.665646"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:15:40",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-15-40.png",
+      "timestamp": "2026-01-30T06:15:40.549000"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:15:09",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-15-09.png",
+      "timestamp": "2026-01-30T06:15:09.211521"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:14:47",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-14-47.png",
+      "timestamp": "2026-01-30T06:14:47.908237"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:14:31",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-14-31.png",
+      "timestamp": "2026-01-30T06:14:31.225974"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:14:11",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-14-11.png",
+      "timestamp": "2026-01-30T06:14:11.700305"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:13:53",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-13-53.png",
+      "timestamp": "2026-01-30T06:13:53.746000"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:13:32",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-13-32.png",
+      "timestamp": "2026-01-30T06:13:32.750586"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:13:11",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-13-11.png",
+      "timestamp": "2026-01-30T06:13:11.908009"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:12:51",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-12-51.png",
+      "timestamp": "2026-01-30T06:12:51.445469"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:12:14",
+      "brand": "EcoFlow",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_EcoFlow_official_06-12-14.png",
+      "timestamp": "2026-01-30T06:12:14.987127"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:11:47",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-11-47.png",
+      "timestamp": "2026-01-30T06:11:47.567784"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:11:08",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-11-08.png",
+      "timestamp": "2026-01-30T06:11:08.004470"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:10:46",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-10-46.png",
+      "timestamp": "2026-01-30T06:10:46.596989"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:10:23",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-10-23.png",
+      "timestamp": "2026-01-30T06:10:23.154498"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:10:05",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-10-05.png",
+      "timestamp": "2026-01-30T06:10:05.636843"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:09:55",
+      "brand": "Jackery",
+      "source": "official",
+      "product_name": null,
+      "path": "data/screenshots/2026-01-30/2026-01-30_Jackery_official_06-09-55.png",
+      "timestamp": "2026-01-30T06:09:55.033725"
+    },
     {
       "date": "2026-01-30",
       "time": "03:39:58",
