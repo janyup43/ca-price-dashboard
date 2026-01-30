@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T17:36:29.067478",
+  "last_updated": "2026-01-30T03:40:09.789229",
   "products": [
     {
       "brand": "Jackery",
@@ -9,7 +9,7 @@
       "original_price": 4999,
       "discount_percent": 20.0,
       "url": "https://ca.jackery.com/products/jackery-explorer-5000-plus?variant=44766101504181",
-      "last_updated": "2026-01-29T17:19:06.830018",
+      "last_updated": "2026-01-30T03:21:37.214439",
       "currency": "CAD",
       "source": "official"
     },
@@ -21,7 +21,7 @@
       "original_price": 4999,
       "discount_percent": 20.0,
       "url": "https://ca.jackery.com/products/jackery-explorer-5000-plus?variant=44766101504181",
-      "last_updated": "2026-01-29T17:19:06.830051",
+      "last_updated": "2026-01-30T03:21:37.214471",
       "currency": "CAD",
       "source": "official"
     },
@@ -33,7 +33,7 @@
       "original_price": 5699,
       "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-plus-portable-power-station?variant=43231705399477",
-      "last_updated": "2026-01-29T17:19:06.830059",
+      "last_updated": "2026-01-30T03:21:37.214484",
       "currency": "CAD",
       "source": "official"
     },
@@ -45,7 +45,7 @@
       "original_price": 5699,
       "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-plus-portable-power-station?variant=43231705399477",
-      "last_updated": "2026-01-29T17:19:06.830065",
+      "last_updated": "2026-01-30T03:21:37.214497",
       "currency": "CAD",
       "source": "official"
     },
@@ -53,11 +53,11 @@
       "brand": "Jackery",
       "name": "Explorer 2000 v2 Portable Power Station",
       "capacity": "2000Wh",
-      "current_price": 1199,
+      "current_price": 1399,
       "original_price": 2499,
-      "discount_percent": 52.0,
+      "discount_percent": 44.0,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-v2-portable-power-station?variant=44762436731061",
-      "last_updated": "2026-01-29T17:19:06.830074",
+      "last_updated": "2026-01-30T03:21:37.214515",
       "currency": "CAD",
       "source": "official"
     },
@@ -65,11 +65,11 @@
       "brand": "Jackery",
       "name": "Explorer 2000 v2 Portable Power Station",
       "capacity": "2000Wh",
-      "current_price": 1199,
+      "current_price": 1399,
       "original_price": 2499,
-      "discount_percent": 52.0,
+      "discount_percent": 44.0,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-v2-portable-power-station?variant=44762436731061",
-      "last_updated": "2026-01-29T17:19:06.830082",
+      "last_updated": "2026-01-30T03:21:37.214532",
       "currency": "CAD",
       "source": "official"
     },
@@ -77,11 +77,11 @@
       "brand": "Jackery",
       "name": "Explorer 2000 Plus",
       "capacity": "2000Wh",
-      "current_price": 1799,
+      "current_price": 1899,
       "original_price": 2899,
-      "discount_percent": 37.9,
+      "discount_percent": 34.5,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-plus-portable-power-station?variant=43231705333941",
-      "last_updated": "2026-01-29T17:19:06.830090",
+      "last_updated": "2026-01-30T03:21:37.214547",
       "currency": "CAD",
       "source": "official"
     },
@@ -89,11 +89,11 @@
       "brand": "Jackery",
       "name": "Explorer 2000 Plus",
       "capacity": "2000Wh",
-      "current_price": 1799,
+      "current_price": 1899,
       "original_price": 2899,
-      "discount_percent": 37.9,
+      "discount_percent": 34.5,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-plus-portable-power-station?variant=43231705333941",
-      "last_updated": "2026-01-29T17:19:06.830097",
+      "last_updated": "2026-01-30T03:21:37.214562",
       "currency": "CAD",
       "source": "official"
     },
@@ -105,7 +105,7 @@
       "original_price": 2599,
       "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-v2-portable-power-station?variant=44762436763829",
-      "last_updated": "2026-01-29T17:19:06.830104",
+      "last_updated": "2026-01-30T03:21:37.214577",
       "currency": "CAD",
       "source": "official"
     },
@@ -117,7 +117,7 @@
       "original_price": 2599,
       "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-2000-v2-portable-power-station?variant=44762436763829",
-      "last_updated": "2026-01-29T17:19:06.830111",
+      "last_updated": "2026-01-30T03:21:37.214591",
       "currency": "CAD",
       "source": "official"
     },
@@ -125,11 +125,11 @@
       "brand": "Jackery",
       "name": "Explorer 1500 v2 Portable Power Station",
       "capacity": "1500Wh",
-      "current_price": 1099,
+      "current_price": 1699,
       "original_price": 1699,
-      "discount_percent": 35.3,
+      "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-1500-v2-portable-power-station?variant=52059327856821",
-      "last_updated": "2026-01-29T17:19:06.830119",
+      "last_updated": "2026-01-30T03:21:37.214606",
       "currency": "CAD",
       "source": "official"
     },
@@ -137,11 +137,23 @@
       "brand": "Jackery",
       "name": "Explorer 1500 v2 Portable Power Station",
       "capacity": "1500Wh",
+      "current_price": 1699,
+      "original_price": 1699,
+      "discount_percent": null,
+      "url": "https://ca.jackery.com/products/jackery-explorer-1500-v2-portable-power-station?variant=52059327856821",
+      "last_updated": "2026-01-30T03:21:37.214621",
+      "currency": "CAD",
+      "source": "official"
+    },
+    {
+      "brand": "Jackery",
+      "name": "Explorer 1000 Plus Portable Power Station",
+      "capacity": "1000Wh",
       "current_price": 1099,
       "original_price": 1699,
       "discount_percent": 35.3,
-      "url": "https://ca.jackery.com/products/jackery-explorer-1500-v2-portable-power-station?variant=52059327856821",
-      "last_updated": "2026-01-29T17:19:06.830127",
+      "url": "https://ca.jackery.com/products/jackery-explorer-1000-plus-portable-power-station?variant=43092794867893",
+      "last_updated": "2026-01-30T03:21:37.214636",
       "currency": "CAD",
       "source": "official"
     },
@@ -149,23 +161,11 @@
       "brand": "Jackery",
       "name": "Explorer 1000 Plus Portable Power Station",
       "capacity": "1000Wh",
-      "current_price": 1199,
+      "current_price": 1099,
       "original_price": 1699,
-      "discount_percent": 29.4,
+      "discount_percent": 35.3,
       "url": "https://ca.jackery.com/products/jackery-explorer-1000-plus-portable-power-station?variant=43092794867893",
-      "last_updated": "2026-01-29T17:19:06.830135",
-      "currency": "CAD",
-      "source": "official"
-    },
-    {
-      "brand": "Jackery",
-      "name": "Explorer 1000 Plus Portable Power Station",
-      "capacity": "1000Wh",
-      "current_price": 1199,
-      "original_price": 1699,
-      "discount_percent": 29.4,
-      "url": "https://ca.jackery.com/products/jackery-explorer-1000-plus-portable-power-station?variant=43092794867893",
-      "last_updated": "2026-01-29T17:19:06.830142",
+      "last_updated": "2026-01-30T03:21:37.214652",
       "currency": "CAD",
       "source": "official"
     },
@@ -177,7 +177,7 @@
       "original_price": 649,
       "discount_percent": 47.8,
       "url": "https://ca.jackery.com/products/explorer-500w-portable-power-station?variant=41587731660981",
-      "last_updated": "2026-01-29T17:19:06.830149",
+      "last_updated": "2026-01-30T03:21:37.214666",
       "currency": "CAD",
       "source": "official"
     },
@@ -189,7 +189,7 @@
       "original_price": 649,
       "discount_percent": 47.8,
       "url": "https://ca.jackery.com/products/explorer-500w-portable-power-station?variant=41587731660981",
-      "last_updated": "2026-01-29T17:19:06.830155",
+      "last_updated": "2026-01-30T03:21:37.214679",
       "currency": "CAD",
       "source": "official"
     },
@@ -197,11 +197,11 @@
       "brand": "Jackery",
       "name": "Jackery Explorer 300 Plus Portable Power Station",
       "capacity": "288Wh",
-      "current_price": 369,
-      "original_price": 419,
-      "discount_percent": 11.9,
+      "current_price": 419,
+      "original_price": null,
+      "discount_percent": null,
       "url": "https://ca.jackery.com/products/jackery-explorer-300-plus-portable-power-station",
-      "last_updated": "2026-01-29T17:19:16.356155",
+      "last_updated": "2026-01-30T03:21:49.923579",
       "currency": "CAD",
       "source": "official"
     },
@@ -213,7 +213,7 @@
       "original_price": 299,
       "discount_percent": 20.1,
       "url": "https://ca.jackery.com/products/jackery-explorer-300d-portable-power-station",
-      "last_updated": "2026-01-29T17:19:34.412207",
+      "last_updated": "2026-01-30T03:22:12.267225",
       "currency": "CAD",
       "source": "official"
     },
@@ -221,11 +221,11 @@
       "brand": "Jackery",
       "name": "Jackery Explorer 300 Portable Power Station",
       "capacity": "293.8Wh",
-      "current_price": 279,
-      "original_price": 419,
-      "discount_percent": 33.4,
+      "current_price": 419,
+      "original_price": null,
+      "discount_percent": null,
       "url": "https://ca.jackery.com/products/explorer-300-portable-power-station",
-      "last_updated": "2026-01-29T17:19:54.737388",
+      "last_updated": "2026-01-30T03:22:36.503262",
       "currency": "CAD",
       "source": "official"
     },
@@ -237,7 +237,7 @@
       "original_price": 1869,
       "discount_percent": 59.9,
       "url": "https://ca.jackery.com/products/explorer-1000-v2-portable-power-station",
-      "last_updated": "2026-01-29T17:20:19.417588",
+      "last_updated": "2026-01-30T03:22:59.468360",
       "currency": "CAD",
       "source": "official"
     },
@@ -249,7 +249,7 @@
       "original_price": 1699,
       "discount_percent": 55.9,
       "url": "https://ca.jackery.com/products/explorer-1000-portable-power-station",
-      "last_updated": "2026-01-29T17:20:51.238005",
+      "last_updated": "2026-01-30T03:23:35.743302",
       "currency": "CAD",
       "source": "official"
     },
@@ -261,7 +261,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/delta-pro-portable-power-station",
-      "last_updated": "2026-01-29T17:21:11.080721",
+      "last_updated": "2026-01-30T03:24:03.481848",
       "currency": "CAD",
       "source": "official"
     },
@@ -273,7 +273,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/delta-2-portable-power-station",
-      "last_updated": "2026-01-29T17:21:42.976955",
+      "last_updated": "2026-01-30T03:24:40.483106",
       "currency": "CAD",
       "source": "official"
     },
@@ -285,7 +285,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/delta-2-max-portable-power-station",
-      "last_updated": "2026-01-29T17:22:03.321687",
+      "last_updated": "2026-01-30T03:25:08.653707",
       "currency": "CAD",
       "source": "official"
     },
@@ -297,7 +297,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/river-2-portable-power-station",
-      "last_updated": "2026-01-29T17:22:24.679901",
+      "last_updated": "2026-01-30T03:25:27.908638",
       "currency": "CAD",
       "source": "official"
     },
@@ -309,7 +309,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/river-2-max-portable-power-station",
-      "last_updated": "2026-01-29T17:22:45.269886",
+      "last_updated": "2026-01-30T03:25:51.953251",
       "currency": "CAD",
       "source": "official"
     },
@@ -321,7 +321,19 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/river-2-pro-portable-power-station",
-      "last_updated": "2026-01-29T17:23:05.249141",
+      "last_updated": "2026-01-30T03:26:18.070306",
+      "currency": "CAD",
+      "source": "official"
+    },
+    {
+      "brand": "EcoFlow",
+      "name": "EcoFlow TRAIL Series DC Portable Power Station",
+      "capacity": "192Wh",
+      "current_price": 159,
+      "original_price": null,
+      "discount_percent": null,
+      "url": "https://ca.ecoflow.com/products/trail-series",
+      "last_updated": "2026-01-30T03:26:35.965130",
       "currency": "CAD",
       "source": "official"
     },
@@ -333,7 +345,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/river-3-plus-portable-power-station",
-      "last_updated": "2026-01-29T17:23:42.343472",
+      "last_updated": "2026-01-30T03:26:53.364450",
       "currency": "CAD",
       "source": "official"
     },
@@ -345,7 +357,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://ca.ecoflow.com/products/river-3-portable-power-station",
-      "last_updated": "2026-01-29T17:24:03.274718",
+      "last_updated": "2026-01-30T03:27:19.579198",
       "currency": "CAD",
       "source": "official"
     },
@@ -357,7 +369,7 @@
       "original_price": 2599,
       "discount_percent": 46.2,
       "url": "https://ca.ecoflow.com/products/delta-3-max-series-portable-power-station-2048wh",
-      "last_updated": "2026-01-29T17:24:42.477336",
+      "last_updated": "2026-01-30T03:27:54.720734",
       "currency": "CAD",
       "source": "official"
     },
@@ -369,7 +381,7 @@
       "original_price": 3599,
       "discount_percent": 44.5,
       "url": "https://ca.ecoflow.com/products/delta-3-ultra-series-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477368",
+      "last_updated": "2026-01-30T03:27:54.720754",
       "currency": "CAD",
       "source": "official"
     },
@@ -381,7 +393,7 @@
       "original_price": 1099,
       "discount_percent": 22.7,
       "url": "https://ca.ecoflow.com/products/delta-3-plus-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477377",
+      "last_updated": "2026-01-30T03:27:54.720764",
       "currency": "CAD",
       "source": "official"
     },
@@ -393,7 +405,7 @@
       "original_price": 1199,
       "discount_percent": 47.5,
       "url": "https://ca.ecoflow.com/products/delta-3-classic-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477384",
+      "last_updated": "2026-01-30T03:27:54.720773",
       "currency": "CAD",
       "source": "official"
     },
@@ -405,7 +417,7 @@
       "original_price": 4499,
       "discount_percent": 33.3,
       "url": "https://ca.ecoflow.com/products/delta-pro-3-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477394",
+      "last_updated": "2026-01-30T03:27:54.720785",
       "currency": "CAD",
       "source": "official"
     },
@@ -417,7 +429,7 @@
       "original_price": 4499,
       "discount_percent": 46.7,
       "url": "https://ca.ecoflow.com/products/delta-pro-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477400",
+      "last_updated": "2026-01-30T03:27:54.720793",
       "currency": "CAD",
       "source": "official"
     },
@@ -429,7 +441,7 @@
       "original_price": 8598,
       "discount_percent": 32.6,
       "url": "https://ca.ecoflow.com/products/delta-pro-ultra",
-      "last_updated": "2026-01-29T17:24:42.477409",
+      "last_updated": "2026-01-30T03:27:54.720803",
       "currency": "CAD",
       "source": "official"
     },
@@ -441,7 +453,7 @@
       "original_price": 2399,
       "discount_percent": 50.0,
       "url": "https://ca.ecoflow.com/products/delta-2-max-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477415",
+      "last_updated": "2026-01-30T03:27:54.720810",
       "currency": "CAD",
       "source": "official"
     },
@@ -453,7 +465,7 @@
       "original_price": 1299,
       "discount_percent": 56.2,
       "url": "https://ca.ecoflow.com/products/delta-2-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477421",
+      "last_updated": "2026-01-30T03:27:54.720818",
       "currency": "CAD",
       "source": "official"
     },
@@ -465,7 +477,7 @@
       "original_price": 999,
       "discount_percent": 15.0,
       "url": "https://ca.ecoflow.com/products/delta-3-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477426",
+      "last_updated": "2026-01-30T03:27:54.720825",
       "currency": "CAD",
       "source": "official"
     },
@@ -477,7 +489,7 @@
       "original_price": 799,
       "discount_percent": 31.3,
       "url": "https://ca.ecoflow.com/products/river-2-pro-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477432",
+      "last_updated": "2026-01-30T03:27:54.720832",
       "currency": "CAD",
       "source": "official"
     },
@@ -489,7 +501,7 @@
       "original_price": 1299,
       "discount_percent": 15.4,
       "url": "https://ca.ecoflow.com/products/delta-3-1500-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477440",
+      "last_updated": "2026-01-30T03:27:54.720841",
       "currency": "CAD",
       "source": "official"
     },
@@ -501,7 +513,7 @@
       "original_price": 599,
       "discount_percent": 30.1,
       "url": "https://ca.ecoflow.com/products/river-2-max-portable-power-station",
-      "last_updated": "2026-01-29T17:24:42.477446",
+      "last_updated": "2026-01-30T03:27:54.720848",
       "currency": "CAD",
       "source": "official"
     },
@@ -513,7 +525,7 @@
       "original_price": 2598,
       "discount_percent": 54.2,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-2-portable-power-station-2",
-      "last_updated": "2026-01-29T17:24:42.477452",
+      "last_updated": "2026-01-30T03:27:54.720856",
       "currency": "CAD",
       "source": "official"
     },
@@ -525,7 +537,7 @@
       "original_price": 6347,
       "discount_percent": 18.1,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-pro-portable-power-station-400w-solar-panel-transfer-switch",
-      "last_updated": "2026-01-29T17:24:42.477461",
+      "last_updated": "2026-01-30T03:27:54.720866",
       "currency": "CAD",
       "source": "official"
     },
@@ -537,7 +549,7 @@
       "original_price": 6997,
       "discount_percent": 17.1,
       "url": "https://ca.ecoflow.com/products/delta-pro-3-smart-generator-4000-transfer-switch",
-      "last_updated": "2026-01-29T17:24:42.477469",
+      "last_updated": "2026-01-30T03:27:54.720875",
       "currency": "CAD",
       "source": "official"
     },
@@ -549,7 +561,7 @@
       "original_price": 5198,
       "discount_percent": 50.0,
       "url": "https://ca.ecoflow.com/products/delta-pro-800w-alternator-charger",
-      "last_updated": "2026-01-29T17:24:42.477476",
+      "last_updated": "2026-01-30T03:27:54.720884",
       "currency": "CAD",
       "source": "official"
     },
@@ -561,7 +573,7 @@
       "original_price": 5698,
       "discount_percent": 37.7,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-pro-portable-power-station-125w-4solar-panel-members-only",
-      "last_updated": "2026-01-29T17:24:42.477484",
+      "last_updated": "2026-01-30T03:27:54.720893",
       "currency": "CAD",
       "source": "official"
     },
@@ -573,7 +585,7 @@
       "original_price": 9447,
       "discount_percent": 19.6,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-pro-3-whole-home-power-kit",
-      "last_updated": "2026-01-29T17:24:42.477489",
+      "last_updated": "2026-01-30T03:27:54.720899",
       "currency": "CAD",
       "source": "official"
     },
@@ -585,7 +597,19 @@
       "original_price": 4697,
       "discount_percent": 44.7,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-2-max-extra-battery-160w-solar-panel",
-      "last_updated": "2026-01-29T17:24:42.477497",
+      "last_updated": "2026-01-30T03:27:54.720909",
+      "currency": "CAD",
+      "source": "official"
+    },
+    {
+      "brand": "EcoFlow",
+      "name": "EcoFlow DELTA 3 Plus Portable Power Station - Flash Sale",
+      "capacity": "N/A",
+      "current_price": 799,
+      "original_price": 1099,
+      "discount_percent": 27.3,
+      "url": "https://ca.ecoflow.com/products/ecoflow-delta-3-plus-portable-power-station-flash-sale",
+      "last_updated": "2026-01-30T03:27:54.720917",
       "currency": "CAD",
       "source": "official"
     },
@@ -597,7 +621,7 @@
       "original_price": 2599,
       "discount_percent": 50.0,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-3-max-plus-portable-power-station-2048wh-flase-sale",
-      "last_updated": "2026-01-29T17:24:42.477504",
+      "last_updated": "2026-01-30T03:27:54.720925",
       "currency": "CAD",
       "source": "official"
     },
@@ -609,7 +633,7 @@
       "original_price": 2099,
       "discount_percent": 52.9,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-3-max-series-portable-power-station-2048wh-flash-sale-1",
-      "last_updated": "2026-01-29T17:24:42.477510",
+      "last_updated": "2026-01-30T03:27:54.720932",
       "currency": "CAD",
       "source": "official"
     },
@@ -621,7 +645,7 @@
       "original_price": 3599,
       "discount_percent": 44.5,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-3-ultra-plus-portable-power-station-3072wh-flash-sale",
-      "last_updated": "2026-01-29T17:24:42.477516",
+      "last_updated": "2026-01-30T03:27:54.720939",
       "currency": "CAD",
       "source": "official"
     },
@@ -633,7 +657,7 @@
       "original_price": 3599,
       "discount_percent": 38.9,
       "url": "https://ca.ecoflow.com/products/delta-3-ultra-plus-portable-power-station-3072wh",
-      "last_updated": "2026-01-29T17:24:42.477523",
+      "last_updated": "2026-01-30T03:27:54.721026",
       "currency": "CAD",
       "source": "official"
     },
@@ -645,7 +669,7 @@
       "original_price": 4499,
       "discount_percent": 31.1,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-pro-3-portable-power-station-ul9540-certificated-flash-sale",
-      "last_updated": "2026-01-29T17:24:42.477532",
+      "last_updated": "2026-01-30T03:27:54.721073",
       "currency": "CAD",
       "source": "official"
     },
@@ -657,7 +681,7 @@
       "original_price": 2598,
       "discount_percent": 55.8,
       "url": "https://ca.ecoflow.com/products/ecoflow-2-delta-2-portable-power-station-flash-sale",
-      "last_updated": "2026-01-29T17:24:42.477543",
+      "last_updated": "2026-01-30T03:27:54.721084",
       "currency": "CAD",
       "source": "official"
     },
@@ -669,7 +693,7 @@
       "original_price": 8598,
       "discount_percent": 34.9,
       "url": "https://ca.ecoflow.com/products/ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-flash",
-      "last_updated": "2026-01-29T17:24:42.477552",
+      "last_updated": "2026-01-30T03:27:54.721094",
       "currency": "CAD",
       "source": "official"
     },
@@ -681,7 +705,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus?variant=44782348665028&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:24:52.633326",
+      "last_updated": "2026-01-30T03:28:04.460638",
       "currency": "CAD",
       "source": "official"
     },
@@ -693,7 +717,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus?variant=44782348665028&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:25:12.874332",
+      "last_updated": "2026-01-30T03:28:24.151326",
       "currency": "CAD",
       "source": "official"
     },
@@ -705,7 +729,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800?variant=44782344896708&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:25:32.031539",
+      "last_updated": "2026-01-30T03:28:42.942095",
       "currency": "CAD",
       "source": "official"
     },
@@ -717,7 +741,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800?variant=44782344896708&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:25:52.172130",
+      "last_updated": "2026-01-30T03:29:03.623463",
       "currency": "CAD",
       "source": "official"
     },
@@ -729,7 +753,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000?variant=44964905681092&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:26:13.591515",
+      "last_updated": "2026-01-30T03:29:21.309495",
       "currency": "CAD",
       "source": "official"
     },
@@ -741,7 +765,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000?variant=44964905681092&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:26:30.429321",
+      "last_updated": "2026-01-30T03:29:37.909972",
       "currency": "CAD",
       "source": "official"
     },
@@ -753,7 +777,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c2000-gen2?variant=45310720639172&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:26:54.579826",
+      "last_updated": "2026-01-30T03:29:55.607441",
       "currency": "CAD",
       "source": "official"
     },
@@ -765,7 +789,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c2000-gen2?variant=45310720639172&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:27:07.309562",
+      "last_updated": "2026-01-30T03:30:18.714252",
       "currency": "CAD",
       "source": "official"
     },
@@ -777,7 +801,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000?variant=44782345846980&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:27:22.559192",
+      "last_updated": "2026-01-30T03:30:40.921796",
       "currency": "CAD",
       "source": "official"
     },
@@ -789,7 +813,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000?variant=44782345846980&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:27:43.653084",
+      "last_updated": "2026-01-30T03:30:58.338228",
       "currency": "CAD",
       "source": "official"
     },
@@ -801,7 +825,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c1000-gen2?variant=45157711446212&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:28:04.733983",
+      "last_updated": "2026-01-30T03:31:16.677154",
       "currency": "CAD",
       "source": "official"
     },
@@ -813,7 +837,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c1000-gen2?variant=45157711446212&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:28:27.421462",
+      "last_updated": "2026-01-30T03:31:32.661491",
       "currency": "CAD",
       "source": "official"
     },
@@ -825,7 +849,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c1000?variant=44782346109124&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:28:44.754049",
+      "last_updated": "2026-01-30T03:31:51.725275",
       "currency": "CAD",
       "source": "official"
     },
@@ -837,7 +861,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c1000?variant=44782346109124&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:28:58.854176",
+      "last_updated": "2026-01-30T03:32:10.417668",
       "currency": "CAD",
       "source": "official"
     },
@@ -849,7 +873,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus-expansion-battery?variant=44782348828868&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:29:13.226668",
+      "last_updated": "2026-01-30T03:32:25.403730",
       "currency": "CAD",
       "source": "official"
     },
@@ -861,7 +885,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus-expansion-battery?variant=44782348828868&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:29:28.044448",
+      "last_updated": "2026-01-30T03:32:44.576377",
       "currency": "CAD",
       "source": "official"
     },
@@ -873,7 +897,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus-smart-home-power-kit?variant=44806600786116&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:29:42.336594",
+      "last_updated": "2026-01-30T03:33:01.903486",
       "currency": "CAD",
       "source": "official"
     },
@@ -885,7 +909,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus-smart-home-power-kit?variant=44806600786116&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:29:57.303492",
+      "last_updated": "2026-01-30T03:33:24.987018",
       "currency": "CAD",
       "source": "official"
     },
@@ -897,7 +921,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000-expansion-battery?variant=44968849965252&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:30:18.634538",
+      "last_updated": "2026-01-30T03:33:44.177255",
       "currency": "CAD",
       "source": "official"
     },
@@ -909,7 +933,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000-expansion-battery?variant=44968849965252&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:30:38.575862",
+      "last_updated": "2026-01-30T03:34:02.939120",
       "currency": "CAD",
       "source": "official"
     },
@@ -921,7 +945,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-expansion-battery?variant=44782344405188&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:30:58.609074",
+      "last_updated": "2026-01-30T03:34:19.132528",
       "currency": "CAD",
       "source": "official"
     },
@@ -933,7 +957,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-expansion-battery?variant=44782344405188&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:31:18.213301",
+      "last_updated": "2026-01-30T03:34:37.431322",
       "currency": "CAD",
       "source": "official"
     },
@@ -945,7 +969,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000-2?variant=44968875786436&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:31:39.864896",
+      "last_updated": "2026-01-30T03:34:55.032597",
       "currency": "CAD",
       "source": "official"
     },
@@ -957,7 +981,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000-2?variant=44968875786436&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:31:59.323117",
+      "last_updated": "2026-01-30T03:35:11.813422",
       "currency": "CAD",
       "source": "official"
     },
@@ -969,7 +993,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c2000-gen2-with-expansion-battery?variant=45310759731396&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:32:16.300930",
+      "last_updated": "2026-01-30T03:35:33.559408",
       "currency": "CAD",
       "source": "official"
     },
@@ -981,7 +1005,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c2000-gen2-with-expansion-battery?variant=45310759731396&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:32:30.267313",
+      "last_updated": "2026-01-30T03:35:56.306104",
       "currency": "CAD",
       "source": "official"
     },
@@ -993,7 +1017,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000-bp2600-expansion-battery?variant=45424517546180&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:32:50.436096",
+      "last_updated": "2026-01-30T03:36:14.533369",
       "currency": "CAD",
       "source": "official"
     },
@@ -1005,7 +1029,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000-bp2600-expansion-battery?variant=45424517546180&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:33:04.211525",
+      "last_updated": "2026-01-30T03:36:37.071394",
       "currency": "CAD",
       "source": "official"
     },
@@ -1017,7 +1041,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c300?variant=44782347157700&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:33:17.910597",
+      "last_updated": "2026-01-30T03:36:55.815746",
       "currency": "CAD",
       "source": "official"
     },
@@ -1029,7 +1053,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c300?variant=44782347157700&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:33:34.165976",
+      "last_updated": "2026-01-30T03:37:08.137681",
       "currency": "CAD",
       "source": "official"
     },
@@ -1041,7 +1065,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c300-dc?variant=45413945376964&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:33:57.011064",
+      "last_updated": "2026-01-30T03:37:29.559968",
       "currency": "CAD",
       "source": "official"
     },
@@ -1053,7 +1077,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c300-dc?variant=45413945376964&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:34:12.568797",
+      "last_updated": "2026-01-30T03:37:43.240334",
       "currency": "CAD",
       "source": "official"
     },
@@ -1065,7 +1089,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c200-dc?variant=44782344274116&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:34:28.450574",
+      "last_updated": "2026-01-30T03:37:58.663477",
       "currency": "CAD",
       "source": "official"
     },
@@ -1077,7 +1101,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c200-dc?variant=44782344274116&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:34:44.234153",
+      "last_updated": "2026-01-30T03:38:18.313855",
       "currency": "CAD",
       "source": "official"
     },
@@ -1089,7 +1113,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c800x?variant=45187211591876&ref=power-stations-collection",
-      "last_updated": "2026-01-29T17:35:02.139788",
+      "last_updated": "2026-01-30T03:38:37.760476",
       "currency": "CAD",
       "source": "official"
     },
@@ -1101,7 +1125,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/c800x?variant=45187211591876&ref=power-stations-collection_learnmore",
-      "last_updated": "2026-01-29T17:35:15.651455",
+      "last_updated": "2026-01-30T03:38:53.896367",
       "currency": "CAD",
       "source": "official"
     },
@@ -1113,7 +1137,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3000?ref=portable-power-stations",
-      "last_updated": "2026-01-29T17:35:30.557221",
+      "last_updated": "2026-01-30T03:39:09.908150",
       "currency": "CAD",
       "source": "official"
     },
@@ -1125,7 +1149,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f3800-plus?ref=portable-power-stations",
-      "last_updated": "2026-01-29T17:35:45.390807",
+      "last_updated": "2026-01-30T03:39:24.790049",
       "currency": "CAD",
       "source": "official"
     },
@@ -1137,7 +1161,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000?ref=portable-power-stations",
-      "last_updated": "2026-01-29T17:36:03.674549",
+      "last_updated": "2026-01-30T03:39:42.493608",
       "currency": "CAD",
       "source": "official"
     },
@@ -1149,7 +1173,7 @@
       "original_price": null,
       "discount_percent": null,
       "url": "https://www.ankersolix.com/ca/products/f2000",
-      "last_updated": "2026-01-29T17:36:21.301192",
+      "last_updated": "2026-01-30T03:40:00.519747",
       "currency": "CAD",
       "source": "official"
     }
