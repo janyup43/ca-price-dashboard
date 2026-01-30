@@ -35,7 +35,7 @@ jobs:
       - name: Install Playwright browsers
         run: |
           playwright install chromium
-          playwright install-deps chromium
+          sudo playwright install-deps chromium
       
       - name: Display current time
         run: |
