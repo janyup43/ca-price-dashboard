@@ -26,26 +26,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libnss3 \
-            libnspr4 \
-            libatk1.0-0 \
-            libatk-bridge2.0-0 \
-            libcups2 \
-            libdrm2 \
-            libxkbcommon0 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxfixes3 \
-            libxrandr2 \
-            libgbm1 \
-            libasound2
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
@@ -53,6 +35,10 @@ jobs:
       - name: Install Playwright browsers
         run: |
           playwright install chromium
+
+      - name: Install Playwright system dependencies
+        run: |
+          sudo playwright install-deps chromium
       
       - name: Display current time
         run: |
