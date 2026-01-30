@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Python dependencies
         run: |
@@ -40,6 +42,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git config --global --add safe.directory /__w/ca-price-dashboard/ca-price-dashboard
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/prices.json data/history.json data/screenshots.json data/screenshots/
