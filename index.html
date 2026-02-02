@@ -601,20 +601,28 @@
 
                 <!-- Price Trend Chart -->
                 <div class="chart-card">
-                    <div class="card-header" style="padding: 0; border: none; flex-direction: column; align-items: flex-start; gap: 10px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                            <div>
+                    <div class="card-header" style="padding: 0; border: none; flex-direction: column; align-items: flex-start; gap: 15px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; gap: 20px;">
+                            <div style="flex: 1;">
                                 <h3 class="card-title" style="margin-bottom: 5px;">价格趋势（7天）</h3>
                                 <p id="chartDescription" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
                                     📊 显示每个品牌所有产品的平均价格变化
                                 </p>
                             </div>
-                            <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem;">
-                                <option value="all">📈 所有品牌（平均价）</option>
-                                <option value="Jackery">🔶 Jackery 各产品</option>
-                                <option value="EcoFlow">🔷 EcoFlow 各产品</option>
-                                <option value="Anker">🟣 Anker 各产品</option>
-                            </select>
+                            <div style="display: flex; gap: 10px; flex-shrink: 0;">
+                                <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 180px;">
+                                    <option value="all">📈 品牌对比（平均价）</option>
+                                    <option value="Jackery">🔶 Jackery（Top 5）</option>
+                                    <option value="EcoFlow">🔷 EcoFlow（Top 5）</option>
+                                    <option value="Anker">🟣 Anker（Top 5）</option>
+                                </select>
+                                <select id="chartCapacityFilter" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 140px;">
+                                    <option value="all">全部容量</option>
+                                    <option value="1000">🔋 1度电 (1kWh)</option>
+                                    <option value="500-1500">📦 0.5-1.5度</option>
+                                    <option value="2000">⚡ 2度+ (2kWh+)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="chart-container">
@@ -963,6 +971,7 @@
         function renderTrendChart() {
             const ctx = document.getElementById('trendChart').getContext('2d');
             const selectedBrand = document.getElementById('chartBrandSelect').value;
+            const capacityFilter = document.getElementById('chartCapacityFilter')?.value || 'all';
 
             if (trendChart) trendChart.destroy();
 
@@ -975,13 +984,27 @@
                 'Anker': '#7b2cbf'
             };
 
+            // 容量筛选函数
+            const filterByChartCapacity = (products) => {
+                if (capacityFilter === 'all') return products;
+                return products.filter(p => {
+                    const cap = parseInt(p.capacity) || 0;
+                    if (capacityFilter === '1000') return cap >= 900 && cap <= 1100;
+                    if (capacityFilter === '500-1500') return cap >= 500 && cap <= 1500;
+                    if (capacityFilter === '2000') return cap >= 2000;
+                    return true;
+                });
+            };
+
             let datasets = [];
 
             if (selectedBrand === 'all') {
                 ['Jackery', 'EcoFlow', 'Anker'].forEach(brand => {
-                    const brandProducts = filterByCapacity(
-                        pricesData.products.filter(p => p.brand === brand),
-                        selectedCapacity
+                    const brandProducts = filterByChartCapacity(
+                        filterByCapacity(
+                            pricesData.products.filter(p => p.brand === brand),
+                            selectedCapacity
+                        )
                     );
 
                     if (brandProducts.length === 0) return;
@@ -999,33 +1022,36 @@
                     });
 
                     datasets.push({
-                        label: `${brand} - 平均价 ($${Math.round(data[data.length-1] || 0)})`,
+                        label: `${brand} - 平均 $${Math.round(data[data.length-1] || 0)}`,
                         data: data,
                         borderColor: colors[brand],
                         backgroundColor: colors[brand] + '20',
                         tension: 0.3,
                         fill: false,
-                        pointRadius: 4,
+                        pointRadius: 5,
                         borderWidth: 3,
                     });
                 });
             } else {
-                const brandProducts = filterByCapacity(
-                    pricesData.products.filter(p => p.brand === selectedBrand),
-                    selectedCapacity
+                let brandProducts = filterByChartCapacity(
+                    filterByCapacity(
+                        pricesData.products.filter(p => p.brand === selectedBrand),
+                        selectedCapacity
+                    )
                 );
 
-                // 为同一品牌的不同产品生成不同颜色
-                const baseColor = colors[selectedBrand];
-                const generateColors = (base, count) => {
-                    const hue = { '#ff6b35': 15, '#00d4ff': 190, '#7b2cbf': 270 }[base] || 200;
-                    return Array.from({length: count}, (_, i) => {
-                        const h = (hue + i * (360 / Math.max(count, 3))) % 360;
-                        return `hsl(${h}, 70%, 60%)`;
-                    });
-                };
+                // 按当前价格排序，只取Top 5
+                brandProducts.sort((a, b) => b.current_price - a.current_price);
+                brandProducts = brandProducts.slice(0, 5);
 
-                const productColors = generateColors(baseColor, brandProducts.length);
+                // 使用预定义的5种清晰可辨的颜色
+                const distinctColors = [
+                    '#FF6B6B', // 红色
+                    '#4ECDC4', // 青色
+                    '#FFE66D', // 黄色
+                    '#A8E6CF', // 绿色
+                    '#C7CEEA', // 紫色
+                ];
 
                 brandProducts.forEach((p, index) => {
                     const data = records.map(record => {
@@ -1033,15 +1059,27 @@
                         return record.prices[key]?.current_price || null;
                     });
 
+                    // 简化产品名称
+                    let shortName = p.name
+                        .replace('Portable Power Station', '')
+                        .replace('(1024Wh)', '1kWh')
+                        .replace(/\(.*?\)/g, '')
+                        .trim();
+                    if (shortName.length > 25) {
+                        shortName = shortName.substring(0, 25) + '...';
+                    }
+
+                    const avgPrice = Math.round(data.filter(d => d !== null).reduce((a,b) => a+b, 0) / data.filter(d => d !== null).length || 0);
+
                     datasets.push({
-                        label: p.name.length > 30 ? p.name.substring(0, 30) + '...' : p.name,
+                        label: `${shortName} ($${avgPrice})`,
                         data: data,
-                        borderColor: productColors[index],
-                        backgroundColor: productColors[index] + '20',
+                        borderColor: distinctColors[index],
+                        backgroundColor: distinctColors[index] + '30',
                         tension: 0.3,
                         fill: false,
                         pointRadius: 4,
-                        borderWidth: 2,
+                        borderWidth: 3,
                     });
                 });
             }
@@ -1195,13 +1233,16 @@
             const description = document.getElementById('chartDescription');
 
             if (selectedBrand === 'all') {
-                description.textContent = '📊 显示每个品牌所有产品的平均价格变化';
+                description.textContent = '📊 显示三个品牌的平均价格对比（每个品牌一条线）';
             } else {
-                description.textContent = `📊 显示 ${selectedBrand} 品牌各个产品的价格变化（每条线代表一个产品）`;
+                description.textContent = `📊 显示 ${selectedBrand} 品牌 Top 5 产品（按价格排序，每条线代表一个产品）`;
             }
 
             renderTrendChart();
         });
+
+        // Chart capacity filter
+        document.getElementById('chartCapacityFilter').addEventListener('change', renderTrendChart);
 
         // Close modal on outside click
         document.getElementById('historyModal').addEventListener('click', (e) => {
