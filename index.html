@@ -339,12 +339,13 @@
             background: var(--bg-card);
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            padding: 20px;
+            padding: 24px;
         }
 
         .chart-container {
-            height: 250px;
-            margin-top: 15px;
+            height: 380px;
+            margin-top: 20px;
+            position: relative;
         }
 
         /* Stats Cards */
@@ -601,28 +602,26 @@
 
                 <!-- Price Trend Chart -->
                 <div class="chart-card">
-                    <div class="card-header" style="padding: 0; border: none; flex-direction: column; align-items: flex-start; gap: 15px;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; gap: 20px;">
-                            <div style="flex: 1;">
-                                <h3 class="card-title" style="margin-bottom: 5px;">价格趋势（7天）</h3>
-                                <p id="chartDescription" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                                    📊 显示每个品牌所有产品的平均价格变化
-                                </p>
-                            </div>
-                            <div style="display: flex; gap: 10px; flex-shrink: 0;">
-                                <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 180px;">
-                                    <option value="all">📈 品牌对比（平均价）</option>
-                                    <option value="Jackery">🔶 Jackery（Top 5）</option>
-                                    <option value="EcoFlow">🔷 EcoFlow（Top 5）</option>
-                                    <option value="Anker">🟣 Anker（Top 5）</option>
-                                </select>
-                                <select id="chartCapacityFilter" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 140px;">
-                                    <option value="all">全部容量</option>
-                                    <option value="1000">🔋 1度电 (1kWh)</option>
-                                    <option value="500-1500">📦 0.5-1.5度</option>
-                                    <option value="2000">⚡ 2度+ (2kWh+)</option>
-                                </select>
-                            </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 class="card-title" style="margin: 0 0 6px 0;">价格趋势（7天）</h3>
+                            <p id="chartDescription" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+                                📊 显示每个品牌所有产品的平均价格变化
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 180px;">
+                                <option value="all">📈 品牌对比（平均价）</option>
+                                <option value="Jackery">🔶 Jackery（Top 5）</option>
+                                <option value="EcoFlow">🔷 EcoFlow（Top 5）</option>
+                                <option value="Anker">🟣 Anker（Top 5）</option>
+                            </select>
+                            <select id="chartCapacityFilter" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; min-width: 140px;">
+                                <option value="all">全部容量</option>
+                                <option value="1000">🔋 1度电 (1kWh)</option>
+                                <option value="500-1500">📦 0.5-1.5度</option>
+                                <option value="2000">⚡ 2度+ (2kWh+)</option>
+                            </select>
                         </div>
                     </div>
                     <div class="chart-container">
@@ -1102,6 +1101,14 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 20,
+                            top: 20,
+                            bottom: 10
+                        }
+                    },
                     interaction: {
                         mode: 'index',
                         intersect: false,
@@ -1112,10 +1119,12 @@
                             position: 'bottom',
                             labels: {
                                 color: '#d0d0d0',
-                                font: { size: 11, weight: '500' },
-                                padding: 15,
+                                font: { size: 10.5, weight: '500' },
+                                padding: 12,
                                 usePointStyle: true,
                                 pointStyle: 'circle',
+                                boxWidth: 8,
+                                boxHeight: 8,
                             }
                         },
                         tooltip: {
@@ -1136,12 +1145,17 @@
                     scales: {
                         x: {
                             grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { color: '#a0a0a0' }
+                            ticks: {
+                                color: '#a0a0a0',
+                                font: { size: 11 }
+                            }
                         },
                         y: {
                             grid: { color: 'rgba(255,255,255,0.05)' },
                             ticks: {
                                 color: '#a0a0a0',
+                                font: { size: 11 },
+                                padding: 8,
                                 callback: value => '$' + value.toLocaleString()
                             }
                         }
