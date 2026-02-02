@@ -2,10 +2,11 @@ name: Daily Price Scraper
 
 on:
   schedule:
-    # 在加拿大东部时间每天 00:00 运行 (UTC 05:00)
-    # 注意：夏令时期间是 UTC 04:00，冬令时是 UTC 05:00
-    # 这里设置为 UTC 05:00，对应冬令时的午夜
+    # 每天运行2次，提高可靠性（GitHub Actions cron 可能偶尔延迟或跳过）
+    # 第一次：加拿大东部时间 00:00 (UTC 05:00 冬令时 / UTC 04:00 夏令时)
     - cron: '0 5 * * *'
+    # 第二次：加拿大东部时间 12:00 (UTC 17:00 冬令时 / UTC 16:00 夏令时)
+    - cron: '0 17 * * *'
 
   # 允许手动触发
   workflow_dispatch:
