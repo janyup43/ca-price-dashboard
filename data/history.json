@@ -2390,7 +2390,7 @@
     },
     {
       "date": "2026-02-02",
-      "timestamp": "2026-02-02T07:19:38.596099",
+      "timestamp": "2026-02-02T08:15:45.183708",
       "prices": {
         "Jackery|Explorer 5000 Plus": {
           "current_price": 3999,
@@ -2657,7 +2657,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F3800 Portable Power Station - 3,840Wh | 6,000W": {
-          "current_price": 2799,
+          "current_price": 2999,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -2675,7 +2675,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F2000 Portable Power Station - 2,048Wh | 2,400W": {
-          "current_price": 1099,
+          "current_price": 1299,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -2687,7 +2687,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX C1000 Portable Power Station - 1,056Wh | 1,800W": {
-          "current_price": 649,
+          "current_price": 699,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -2711,7 +2711,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F3800 + Expansion Battery - 7,680Wh | 6,000W": {
-          "current_price": 4699,
+          "current_price": 4899,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
