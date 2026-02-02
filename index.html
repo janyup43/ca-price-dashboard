@@ -1007,19 +1007,33 @@
                     selectedCapacity
                 );
 
-                brandProducts.forEach(p => {
+                // 为同一品牌的不同产品生成不同颜色
+                const baseColor = colors[selectedBrand];
+                const generateColors = (base, count) => {
+                    const hue = { '#ff6b35': 15, '#00d4ff': 190, '#7b2cbf': 270 }[base] || 200;
+                    return Array.from({length: count}, (_, i) => {
+                        const h = (hue + i * (360 / Math.max(count, 3))) % 360;
+                        return `hsl(${h}, 70%, 60%)`;
+                    });
+                };
+
+                const productColors = generateColors(baseColor, brandProducts.length);
+
+                brandProducts.forEach((p, index) => {
                     const data = records.map(record => {
                         const key = `${p.brand}|${p.name}`;
                         return record.prices[key]?.current_price || null;
                     });
 
                     datasets.push({
-                        label: p.name.substring(0, 20),
+                        label: p.name.length > 30 ? p.name.substring(0, 30) + '...' : p.name,
                         data: data,
-                        borderColor: colors[selectedBrand],
+                        borderColor: productColors[index],
+                        backgroundColor: productColors[index] + '20',
                         tension: 0.3,
                         fill: false,
-                        pointRadius: 3,
+                        pointRadius: 4,
+                        borderWidth: 2,
                     });
                 });
             }
@@ -1030,10 +1044,35 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
                     plugins: {
                         legend: {
-                            display: datasets.length <= 5,
-                            labels: { color: '#a0a0a0', font: { size: 10 } }
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#d0d0d0',
+                                font: { size: 11, weight: '500' },
+                                padding: 15,
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(20, 20, 30, 0.95)',
+                            titleColor: '#fff',
+                            bodyColor: '#d0d0d0',
+                            borderColor: 'rgba(255,255,255,0.1)',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.parsed.y.toLocaleString();
+                                }
+                            }
                         }
                     },
                     scales: {
