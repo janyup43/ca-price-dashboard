@@ -601,14 +601,21 @@
 
                 <!-- Price Trend Chart -->
                 <div class="chart-card">
-                    <div class="card-header" style="padding: 0; border: none;">
-                        <h3 class="card-title">Price Trend (7 Days)</h3>
-                        <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 5px 10px; border-radius: 6px;">
-                            <option value="all">All Brands</option>
-                            <option value="Jackery">Jackery</option>
-                            <option value="EcoFlow">EcoFlow</option>
-                            <option value="Anker">Anker</option>
-                        </select>
+                    <div class="card-header" style="padding: 0; border: none; flex-direction: column; align-items: flex-start; gap: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <div>
+                                <h3 class="card-title" style="margin-bottom: 5px;">价格趋势（7天）</h3>
+                                <p id="chartDescription" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+                                    📊 显示每个品牌所有产品的平均价格变化
+                                </p>
+                            </div>
+                            <select id="chartBrandSelect" style="background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem;">
+                                <option value="all">📈 所有品牌（平均价）</option>
+                                <option value="Jackery">🔶 Jackery 各产品</option>
+                                <option value="EcoFlow">🔷 EcoFlow 各产品</option>
+                                <option value="Anker">🟣 Anker 各产品</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="chart-container">
                         <canvas id="trendChart"></canvas>
@@ -992,13 +999,14 @@
                     });
 
                     datasets.push({
-                        label: brand,
+                        label: `${brand} - 平均价 ($${Math.round(data[data.length-1] || 0)})`,
                         data: data,
                         borderColor: colors[brand],
                         backgroundColor: colors[brand] + '20',
                         tension: 0.3,
                         fill: false,
                         pointRadius: 4,
+                        borderWidth: 3,
                     });
                 });
             } else {
@@ -1182,7 +1190,18 @@
         });
 
         // Chart brand select
-        document.getElementById('chartBrandSelect').addEventListener('change', renderTrendChart);
+        document.getElementById('chartBrandSelect').addEventListener('change', function() {
+            const selectedBrand = this.value;
+            const description = document.getElementById('chartDescription');
+
+            if (selectedBrand === 'all') {
+                description.textContent = '📊 显示每个品牌所有产品的平均价格变化';
+            } else {
+                description.textContent = `📊 显示 ${selectedBrand} 品牌各个产品的价格变化（每条线代表一个产品）`;
+            }
+
+            renderTrendChart();
+        });
 
         // Close modal on outside click
         document.getElementById('historyModal').addEventListener('click', (e) => {
