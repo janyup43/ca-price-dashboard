@@ -1000,12 +1000,18 @@
 
             if (selectedBrand === 'all') {
                 ['Jackery', 'EcoFlow', 'Anker'].forEach(brand => {
-                    const brandProducts = filterByChartCapacity(
-                        filterByCapacity(
-                            pricesData.products.filter(p => p.brand === brand),
-                            selectedCapacity
-                        )
+                    // 品牌对比模式：忽略主页面的容量过滤器，只使用图表自己的过滤器
+                    let brandProducts = filterByChartCapacity(
+                        pricesData.products.filter(p => p.brand === brand)
                     );
+
+                    // 去重：相同名称的产品只保留第一个
+                    const seen = new Set();
+                    brandProducts = brandProducts.filter(p => {
+                        if (seen.has(p.name)) return false;
+                        seen.add(p.name);
+                        return true;
+                    });
 
                     if (brandProducts.length === 0) return;
 
@@ -1033,12 +1039,18 @@
                     });
                 });
             } else {
+                // 单品牌模式：忽略主页面的容量过滤器，只使用图表自己的过滤器
                 let brandProducts = filterByChartCapacity(
-                    filterByCapacity(
-                        pricesData.products.filter(p => p.brand === selectedBrand),
-                        selectedCapacity
-                    )
+                    pricesData.products.filter(p => p.brand === selectedBrand)
                 );
+
+                // 去重：相同名称的产品只保留第一个
+                const seen = new Set();
+                brandProducts = brandProducts.filter(p => {
+                    if (seen.has(p.name)) return false;
+                    seen.add(p.name);
+                    return true;
+                });
 
                 // 按当前价格排序，只取Top 5
                 brandProducts.sort((a, b) => b.current_price - a.current_price);
