@@ -214,7 +214,8 @@
         }
 
         .brand-cell {
-            min-width: 200px;
+            max-width: 280px;
+            width: 30%;
         }
 
         .brand-header {
@@ -241,11 +242,17 @@
         .brand-logo.anker { background: var(--anker); }
 
         .product-name {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-primary);
             margin-bottom: 5px;
             font-weight: 500;
             line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            max-height: 2.8em;
         }
 
         .product-capacity-tag {
@@ -259,6 +266,18 @@
 
         .price-cell {
             text-align: right;
+            width: 18%;
+        }
+
+        .comparison-table th:nth-child(3),
+        .comparison-table td:nth-child(3) {
+            width: 20%;
+            min-width: 130px;
+        }
+
+        .comparison-table th:nth-child(4),
+        .comparison-table td:nth-child(4) {
+            width: 180px;
         }
 
         .current-price {
@@ -288,9 +307,16 @@
         .price-change {
             display: flex;
             align-items: center;
-            gap: 5px;
-            font-size: 0.8rem;
-            margin-top: 5px;
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        .price-change > span:first-child {
+            font-size: 1.8rem;
+            line-height: 1;
+            font-weight: bold;
         }
 
         .price-change.down { color: var(--accent-green); }
@@ -904,8 +930,10 @@
 
                 const changeIcon = priceChange.type === 'down' ? '↓' :
                                    priceChange.type === 'up' ? '↑' : '—';
-                const changeText = priceChange.change !== 0 ?
-                    `$${Math.abs(priceChange.change).toFixed(0)} (${priceChange.percent}%)` : 'No change';
+                const changeAmount = priceChange.change !== 0 ?
+                    `$${Math.abs(priceChange.change).toFixed(0)}` : 'No change';
+                const changePercent = priceChange.change !== 0 ?
+                    `(${priceChange.percent}%)` : '';
 
                 return `
                     <tr class="${isBestDeal ? 'best-deal-row' : ''}" onclick="showHistory('${p.brand}', '${p.name.replace(/'/g, "\\'")}')">
@@ -926,7 +954,10 @@
                         <td>
                             <div class="price-change ${priceChange.type}">
                                 <span>${changeIcon}</span>
-                                <span>${changeText}</span>
+                                <div style="display: flex; flex-direction: column; gap: 2px;">
+                                    <span style="font-size: 1rem; font-weight: 600;">${changeAmount}</span>
+                                    ${changePercent ? `<span style="font-size: 0.85rem; opacity: 0.9;">${changePercent}</span>` : ''}
+                                </div>
                             </div>
                         </td>
                         <td onclick="event.stopPropagation()" style="padding: 12px 15px;">
