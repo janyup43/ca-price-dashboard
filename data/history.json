@@ -2387,6 +2387,378 @@
           "source": "official"
         }
       }
+    },
+    {
+      "date": "2026-02-02",
+      "timestamp": "2026-02-02T08:15:45.183708",
+      "prices": {
+        "Jackery|Explorer 5000 Plus": {
+          "current_price": 3999,
+          "original_price": 4999,
+          "discount_percent": 20.0,
+          "source": "official"
+        },
+        "Jackery|Explorer 2000 Plus Double Kit (6000W/240V/4kWh)": {
+          "current_price": 5699,
+          "original_price": 5699,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Jackery|Explorer 2000 v2 Portable Power Station": {
+          "current_price": 1399,
+          "original_price": 2499,
+          "discount_percent": 44.0,
+          "source": "official"
+        },
+        "Jackery|Explorer 2000 Plus": {
+          "current_price": 1899,
+          "original_price": 2899,
+          "discount_percent": 34.5,
+          "source": "official"
+        },
+        "Jackery|Explorer 2000 v2 Extreme Kit": {
+          "current_price": 2599,
+          "original_price": 2599,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Jackery|Explorer 1500 v2 Portable Power Station": {
+          "current_price": 1699,
+          "original_price": 1699,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Jackery|Explorer 1000 Plus Portable Power Station": {
+          "current_price": 1099,
+          "original_price": 1699,
+          "discount_percent": 35.3,
+          "source": "official"
+        },
+        "Jackery|Explorer 500 Portable Power Station": {
+          "current_price": 339,
+          "original_price": 649,
+          "discount_percent": 47.8,
+          "source": "official"
+        },
+        "Jackery|Jackery Explorer 300 Plus Portable Power Station": {
+          "current_price": 419,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Jackery|Jackery Explorer 300D Portable Power Station": {
+          "current_price": 239,
+          "original_price": 299,
+          "discount_percent": 20.1,
+          "source": "official"
+        },
+        "Jackery|Jackery Explorer 300 Portable Power Station": {
+          "current_price": 419,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Jackery|Explorer 1000 v2 Portable Power Station": {
+          "current_price": 749,
+          "original_price": 1869,
+          "discount_percent": 59.9,
+          "source": "official"
+        },
+        "Jackery|Jackery Explorer 1000 v2 Portable Power Station": {
+          "current_price": 749,
+          "original_price": 1699,
+          "discount_percent": 55.9,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro Portable Power Station": {
+          "current_price": 2399,
+          "original_price": 4499,
+          "discount_percent": 46.7,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 2 Portable Power Station": {
+          "current_price": 569,
+          "original_price": 1299,
+          "discount_percent": 56.2,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 2 Max Portable Power Station": {
+          "current_price": 1199,
+          "original_price": 2399,
+          "discount_percent": 50.0,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Classic Portable Power Station (1024Wh)": {
+          "current_price": 629,
+          "original_price": 1199,
+          "discount_percent": 47.5,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow RIVER 2 Portable Power Station": {
+          "current_price": 229,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow RIVER 2 Max Portable Power Station": {
+          "current_price": 419,
+          "original_price": 599,
+          "discount_percent": 30.1,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow RIVER 2 Pro Portable Power Station": {
+          "current_price": 549,
+          "original_price": 799,
+          "discount_percent": 31.3,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow TRAIL Series DC Portable Power Station": {
+          "current_price": 159,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow RIVER 3 Plus Portable Power Station": {
+          "current_price": 329,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow RIVER 3 Portable Power Station": {
+          "current_price": 269,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Max Series Portable Power Station (2048Wh)": {
+          "current_price": 1399,
+          "original_price": 2599,
+          "discount_percent": 46.2,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Ultra Series Portable Power Station (3072Wh)": {
+          "current_price": 1999,
+          "original_price": 3599,
+          "discount_percent": 44.5,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Plus Portable Power Station": {
+          "current_price": 849,
+          "original_price": 1099,
+          "discount_percent": 22.7,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro 3 Portable Power Station (UL9540 Certificated)": {
+          "current_price": 2999,
+          "original_price": 4499,
+          "discount_percent": 33.3,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro Ultra Whole-Home Backup Power (UL 9540 Certificated)": {
+          "current_price": 5799,
+          "original_price": 8598,
+          "discount_percent": 32.6,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Portable Power Station": {
+          "current_price": 849,
+          "original_price": 999,
+          "discount_percent": 15.0,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 1500 Portable Power Station": {
+          "current_price": 1099,
+          "original_price": 1299,
+          "discount_percent": 15.4,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow 2 × DELTA 2 Portable Power Station": {
+          "current_price": 1189,
+          "original_price": 2598,
+          "discount_percent": 54.2,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro Portable Power Station + 400W Solar Panel + Transfer Switch": {
+          "current_price": 5199,
+          "original_price": 6347,
+          "discount_percent": 18.1,
+          "source": "official"
+        },
+        "EcoFlow|DELTA Pro 3 + Smart Generator 4000+ Transfer Switch": {
+          "current_price": 5799,
+          "original_price": 6997,
+          "discount_percent": 17.1,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro + 800W Alternator Charger": {
+          "current_price": 2599,
+          "original_price": 5198,
+          "discount_percent": 50.0,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro Portable Power Station + 500W Solar Kit - Members' Only": {
+          "current_price": 3549,
+          "original_price": 5698,
+          "discount_percent": 37.7,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro 3 Whole-Home Power Kit": {
+          "current_price": 7599,
+          "original_price": 9447,
+          "discount_percent": 19.6,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 2 Max + Extra Battery + 160W Solar Panel - Web Exclusive": {
+          "current_price": 2599,
+          "original_price": 4697,
+          "discount_percent": 44.7,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Max Plus Portable Power Station (2048Wh) - Flash Sale": {
+          "current_price": 1299,
+          "original_price": 2599,
+          "discount_percent": 50.0,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Max Portable Power Station (2048Wh) - Flash Sale": {
+          "current_price": 999,
+          "original_price": 2099,
+          "discount_percent": 52.4,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Ultra Plus Portable Power Station (3072Wh) - Flash Sale": {
+          "current_price": 2199,
+          "original_price": 3599,
+          "discount_percent": 38.9,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA Pro 3 Portable Power Station (UL9540 Certificated) - Flash Sale": {
+          "current_price": 3099,
+          "original_price": 4499,
+          "discount_percent": 31.1,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow 2 × DELTA 2 Portable Power Station - Flash Sale": {
+          "current_price": 1149,
+          "original_price": 2598,
+          "discount_percent": 55.8,
+          "source": "official"
+        },
+        "EcoFlow|DELTA Pro Ultra Whole-Home Backup Power (UL 9540 Certificated) - Flash Sale": {
+          "current_price": 5599,
+          "original_price": 8598,
+          "discount_percent": 34.9,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3800 Plus Portable Power Station - 3,840Wh | 6,000W": {
+          "current_price": 3699,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3800 Portable Power Station - 3,840Wh | 6,000W": {
+          "current_price": 2999,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3000 Portable Power Station - 3,072Wh | 3,600W": {
+          "current_price": 2399,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C2000 Gen 2 Portable Power Station - 2,048Wh | 2,400W": {
+          "current_price": 1299,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F2000 Portable Power Station - 2,048Wh | 2,400W": {
+          "current_price": 1299,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C1000 Gen 2 Portable Power Station - 1,024Wh | 2,000W": {
+          "current_price": 699,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C1000 Portable Power Station - 1,056Wh | 1,800W": {
+          "current_price": 699,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3800 Plus + Expansion Battery": {
+          "current_price": 5599,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3800 Plus + Smart Home Power Kit": {
+          "current_price": 5799,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3000 + Expansion Battery": {
+          "current_price": 3899,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F3800 + Expansion Battery - 7,680Wh | 6,000W": {
+          "current_price": 4899,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|2× Anker SOLIX F3000 Portable Power Station": {
+          "current_price": 4999,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C2000 Gen 2 + Expansion Battery": {
+          "current_price": 2398,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX F2000 + BP2600 Expansion Battery - 4608Wh | 2400W": {
+          "current_price": 2299,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C300 Portable Power Station - 288Wh | 300W": {
+          "current_price": 299.99,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C300 DC Portable Power Station - 288Wh (90,000mAh) | 300W": {
+          "current_price": 239.99,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C200 DC Portable Power Station - 60,000mAh (192Wh) | 200W": {
+          "current_price": 189.99,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        },
+        "Anker|Anker SOLIX C800X Portable Power Station 768Wh | 1200W": {
+          "current_price": 499,
+          "original_price": null,
+          "discount_percent": null,
+          "source": "official"
+        }
+      }
     }
   ]
 }
