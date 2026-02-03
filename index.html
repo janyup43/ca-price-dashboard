@@ -566,10 +566,10 @@
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Product</th>
+                            <th>Product <span style="font-size: 0.7rem; opacity: 0.6;">(点击行查看历史)</span></th>
                             <th>Price</th>
                             <th>vs Yesterday</th>
-                            <th>Source</th>
+                            <th>Buy Now</th>
                         </tr>
                     </thead>
                     <tbody id="comparisonBody">
@@ -929,33 +929,66 @@
                                 <span>${changeText}</span>
                             </div>
                         </td>
-                        <td>
-                            <span class="source-tag ${source}">${source === 'amazon' ? 'Amazon' : 'Official'}</span>
-                            <a href="${p.url}" target="_blank" style="color: var(--accent-blue); font-size: 0.8rem; display: block; margin-top: 5px;">Official →</a>
-                            ${(() => {
-                                const urlOrAsin = amazonAsins[p.name];
-                                if (!urlOrAsin || urlOrAsin === 'YOUR_ASIN_HERE') {
-                                    // 没有配置，使用搜索
-                                    return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
-                                }
+                        <td onclick="event.stopPropagation()" style="padding: 12px 15px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <a href="${p.url}" target="_blank"
+                                   style="display: inline-flex; align-items: center; justify-content: center;
+                                          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                          color: white; padding: 8px 16px; border-radius: 6px;
+                                          text-decoration: none; font-size: 0.85rem; font-weight: 500;
+                                          transition: all 0.2s; box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);"
+                                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(102, 126, 234, 0.4)';"
+                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(102, 126, 234, 0.3)';">
+                                    🏢 Official
+                                </a>
+                                ${(() => {
+                                    const urlOrAsin = amazonAsins[p.name];
+                                    if (!urlOrAsin || urlOrAsin === 'YOUR_ASIN_HERE') {
+                                        // 没有配置，使用搜索
+                                        return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank"
+                                                   style="display: inline-flex; align-items: center; justify-content: center;
+                                                          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                                                          color: white; padding: 8px 16px; border-radius: 6px;
+                                                          text-decoration: none; font-size: 0.85rem; font-weight: 500;
+                                                          transition: all 0.2s; box-shadow: 0 2px 4px rgba(245, 87, 108, 0.3);"
+                                                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(245, 87, 108, 0.4)';"
+                                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(245, 87, 108, 0.3)';">
+                                                    🔍 Amazon Search
+                                                </a>`;
+                                    }
 
-                                let amazonUrl;
-                                if (urlOrAsin.startsWith('http://') || urlOrAsin.startsWith('https://')) {
-                                    // 完整URL，直接使用
-                                    amazonUrl = urlOrAsin;
-                                } else if (urlOrAsin.includes('/dp/')) {
-                                    // 部分URL（如 Product-Title/dp/B0XXX/ref=...），补充域名
-                                    amazonUrl = 'https://www.amazon.ca/' + urlOrAsin;
-                                } else if (urlOrAsin.match(/^B[0-9A-Z]{9}$/)) {
-                                    // 纯ASIN格式，使用简化链接
-                                    amazonUrl = 'https://www.amazon.ca/dp/' + urlOrAsin;
-                                } else {
-                                    // 无法识别格式，fallback到搜索
-                                    return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon Search →</a>`;
-                                }
+                                    let amazonUrl;
+                                    if (urlOrAsin.startsWith('http://') || urlOrAsin.startsWith('https://')) {
+                                        amazonUrl = urlOrAsin;
+                                    } else if (urlOrAsin.includes('/dp/')) {
+                                        amazonUrl = 'https://www.amazon.ca/' + urlOrAsin;
+                                    } else if (urlOrAsin.match(/^B[0-9A-Z]{9}$/)) {
+                                        amazonUrl = 'https://www.amazon.ca/dp/' + urlOrAsin;
+                                    } else {
+                                        return `<a href="https://www.amazon.ca/s?k=${encodeURIComponent(p.brand + ' ' + p.name)}" target="_blank"
+                                                   style="display: inline-flex; align-items: center; justify-content: center;
+                                                          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                                                          color: white; padding: 8px 16px; border-radius: 6px;
+                                                          text-decoration: none; font-size: 0.85rem; font-weight: 500;
+                                                          transition: all 0.2s; box-shadow: 0 2px 4px rgba(245, 87, 108, 0.3);"
+                                                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(245, 87, 108, 0.4)';"
+                                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(245, 87, 108, 0.3)';">
+                                                    🔍 Amazon Search
+                                                </a>`;
+                                    }
 
-                                return `<a href="${amazonUrl}" target="_blank" style="color: var(--accent-orange); font-size: 0.8rem; display: block; margin-top: 3px;">Amazon →</a>`;
-                            })()}
+                                    return `<a href="${amazonUrl}" target="_blank"
+                                               style="display: inline-flex; align-items: center; justify-content: center;
+                                                      background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+                                                      color: white; padding: 8px 16px; border-radius: 6px;
+                                                      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+                                                      transition: all 0.2s; box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);"
+                                               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(255, 152, 0, 0.4)';"
+                                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(255, 152, 0, 0.3)';">
+                                                📦 Amazon
+                                            </a>`;
+                                })()}
+                            </div>
                         </td>
                     </tr>
                 `;
