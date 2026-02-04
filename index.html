@@ -420,54 +420,6 @@
         .stat-card.anker .stat-value { color: var(--anker); }
         .stat-card.best .stat-value { color: var(--accent-green); }
 
-        /* Screenshot Gallery */
-        .screenshot-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            padding: 20px;
-        }
-
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .screenshot-item {
-            aspect-ratio: 16/9;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .screenshot-item .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 8px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            font-size: 0.7rem;
-        }
-
-        .no-screenshot {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
         /* History Modal */
         .modal {
             display: none;
@@ -643,13 +595,6 @@
                     </div>
                 </div>
 
-                <!-- Screenshots -->
-                <div class="screenshot-card">
-                    <h3 class="card-title">Daily Screenshots</h3>
-                    <div class="screenshot-grid" id="screenshotGrid">
-                        <div class="screenshot-item no-screenshot">No screenshots</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -671,7 +616,6 @@
         // Global state
         let pricesData = null;
         let historyData = null;
-        let screenshotsData = null;
         let selectedDate = new Date().toISOString().split('T')[0];
         let selectedCapacity = 'all';
         let trendChart = null;
@@ -715,15 +659,7 @@
                 pricesData = await pricesRes.json();
                 historyData = await historyRes.json();
 
-                // Try to load screenshots data
                 try {
-                    const ssRes = await fetch('data/screenshots.json');
-                    screenshotsData = await ssRes.json();
-                } catch (e) {
-                    screenshotsData = { screenshots: [] };
-                }
-
-                // Try to load Amazon ASINs
                 try {
                     const asinRes = await fetch('data/amazon_asins.json');
                     const asinData = await asinRes.json();
@@ -768,7 +704,6 @@
             updateCapacityCounts();
             updateStats();
             renderComparison();
-            renderScreenshots();
         }
 
         // Update last updated
@@ -1140,23 +1075,6 @@
             }, 100);
         }
 
-        // Render screenshots
-        function renderScreenshots() {
-            const grid = document.getElementById('screenshotGrid');
-            const dateScreenshots = screenshotsData.screenshots.filter(s => s.date === selectedDate);
-
-            if (dateScreenshots.length === 0) {
-                grid.innerHTML = '<div class="screenshot-item no-screenshot">No screenshots for this date</div>';
-                return;
-            }
-
-            grid.innerHTML = dateScreenshots.map(s => `
-                <div class="screenshot-item" onclick="window.open('${s.path}', '_blank')">
-                    <img src="${s.thumbnail || s.path}" alt="${s.brand}">
-                    <div class="overlay">${s.brand} - ${s.time}</div>
-                </div>
-            `).join('');
-        }
 
         // Show product history modal
         function showHistory(brand, name) {
