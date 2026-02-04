@@ -3134,7 +3134,7 @@
     },
     {
       "date": "2026-02-04",
-      "timestamp": "2026-02-04T07:54:56.711023",
+      "timestamp": "2026-02-04T19:48:06.110816",
       "prices": {
         "Jackery|Explorer 5000 Plus": {
           "current_price": 3999,
@@ -3364,12 +3364,6 @@
           "discount_percent": 50.0,
           "source": "official"
         },
-        "EcoFlow|EcoFlow DELTA 3 Max Portable Power Station (2048Wh) - Flash Sale": {
-          "current_price": 989,
-          "original_price": 2099,
-          "discount_percent": 52.9,
-          "source": "official"
-        },
         "EcoFlow|EcoFlow DELTA 3 Ultra Plus Portable Power Station (3072Wh) - Flash Sale": {
           "current_price": 2199,
           "original_price": 3599,
@@ -3382,12 +3376,6 @@
           "discount_percent": 31.1,
           "source": "official"
         },
-        "EcoFlow|DELTA Pro Ultra Whole-Home Backup Power (UL 9540 Certificated) - Flash Sale": {
-          "current_price": 5599,
-          "original_price": 8598,
-          "discount_percent": 34.9,
-          "source": "official"
-        },
         "Anker|Anker SOLIX F3800 Plus Portable Power Station - 3,840Wh | 6,000W": {
           "current_price": 3699,
           "original_price": null,
@@ -3395,7 +3383,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F3800 Portable Power Station - 3,840Wh | 6,000W": {
-          "current_price": 2999,
+          "current_price": 2799,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -3413,7 +3401,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F2000 Portable Power Station - 2,048Wh | 2,400W": {
-          "current_price": 1299,
+          "current_price": 1099,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -3425,7 +3413,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX C1000 Portable Power Station - 1,056Wh | 1,800W": {
-          "current_price": 699,
+          "current_price": 649,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
@@ -3449,7 +3437,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F3800 + Expansion Battery - 7,680Wh | 6,000W": {
-          "current_price": 4899,
+          "current_price": 4699,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
