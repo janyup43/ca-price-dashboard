@@ -271,7 +271,7 @@
 
         .comparison-table th:nth-child(3),
         .comparison-table td:nth-child(3) {
-            width: 220px;
+            width: 240px;
         }
 
         .comparison-table th:nth-child(4),
@@ -327,6 +327,17 @@
         .price-change.down { color: var(--accent-green); }
         .price-change.up { color: var(--accent-red); }
         .price-change.same { color: var(--text-secondary); }
+
+        /* Sparkline styles */
+        .sparkline-point {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sparkline-point:hover {
+            opacity: 1 !important;
+            r: 4;
+        }
 
         .source-tag {
             font-size: 0.7rem;
@@ -599,7 +610,7 @@
                         <tr>
                             <th>Product</th>
                             <th>Price</th>
-                            <th style="width: 200px;">7-Day Trend</th>
+                            <th style="width: 220px;">30-Day Trend <span style="font-size: 0.7rem; opacity: 0.6;">(悬停查看)</span></th>
                             <th>vs Yesterday</th>
                             <th>Buy Now</th>
                         </tr>
@@ -875,15 +886,17 @@
             return result;
         }
 
-        // Generate sparkline for 7-day price trend
+        // Generate sparkline for 30-day price trend with tooltip
         function generateSparkline(brand, name) {
-            const records = historyData.records.slice(-7);
+            const records = historyData.records.slice(-30);
             const prices = [];
+            const dates = [];
 
             records.forEach(record => {
                 const key = `${brand}|${name}`;
                 const data = record.prices[key];
                 prices.push(data ? data.current_price : null);
+                dates.push(record.date);
             });
 
             const validPrices = prices.filter(p => p !== null);
@@ -891,9 +904,9 @@
                 return '<span style="color: var(--text-secondary); font-size: 0.75rem;">No data</span>';
             }
 
-            const width = 180;
-            const height = 45;
-            const padding = 4;
+            const width = 200;
+            const height = 50;
+            const padding = 5;
             const chartWidth = width - padding * 2;
             const chartHeight = height - padding * 2;
 
@@ -902,11 +915,14 @@
             const priceRange = maxPrice - minPrice || 1;
 
             let pathData = '';
+            let pointsData = [];
+
             prices.forEach((price, i) => {
                 if (price !== null) {
                     const x = padding + (i / (prices.length - 1)) * chartWidth;
                     const y = padding + chartHeight - ((price - minPrice) / priceRange) * chartHeight;
                     pathData += (pathData ? ' L ' : 'M ') + x + ' ' + y;
+                    pointsData.push({ x, y, price, date: dates[i] });
                 }
             });
 
@@ -915,13 +931,29 @@
             const change = ((lastPrice - firstPrice) / firstPrice) * 100;
             const trendColor = change < -0.5 ? '#4ade80' : change > 0.5 ? '#f87171' : '#64748b';
 
+            const sparklineId = `sparkline_${brand}_${name.replace(/[^a-zA-Z0-9]/g, '_')}`;
+
             return `
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <svg width="${width}" height="${height}">
-                        <path d="${pathData}" fill="none" stroke="${trendColor}" stroke-width="2.5" stroke-linecap="round"/>
-                    </svg>
+                <div style="display: flex; align-items: center; gap: 10px; position: relative;">
+                    <div style="position: relative;">
+                        <svg width="${width}" height="${height}" id="${sparklineId}">
+                            <path d="${pathData}" fill="none" stroke="${trendColor}" stroke-width="2" stroke-linecap="round"/>
+                            ${pointsData.map(p => `
+                                <circle cx="${p.x}" cy="${p.y}" r="3" fill="${trendColor}" opacity="0" class="sparkline-point">
+                                    <title>${p.date}: $${p.price.toFixed(0)}</title>
+                                </circle>
+                            `).join('')}
+                        </svg>
+                        <div id="${sparklineId}_tooltip" style="position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+                             background: rgba(0,0,0,0.9); color: white; padding: 6px 10px; border-radius: 6px;
+                             font-size: 0.7rem; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.2s;
+                             box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 1000; margin-bottom: 5px;">
+                            <div id="${sparklineId}_tooltip_content"></div>
+                        </div>
+                    </div>
                     <div style="font-size: 0.75rem; color: ${trendColor}; font-weight: 600; white-space: nowrap;">
-                        ${change < -0.5 ? '↓' : change > 0.5 ? '↑' : '—'} ${Math.abs(change).toFixed(1)}%
+                        ${change < -0.5 ? '↓' : change > 0.5 ? '↑' : '—'} ${Math.abs(change).toFixed(1)}%<br>
+                        <span style="font-size: 0.65rem; opacity: 0.8;">30天</span>
                     </div>
                 </div>
             `;
@@ -979,7 +1011,7 @@
                             ${p.original_price ? `<span class="original-price">$${p.original_price.toLocaleString()}</span>` : ''}
                             ${p.discount_percent ? `<div class="discount-tag">-${p.discount_percent}%</div>` : ''}
                         </td>
-                        <td style="padding: 12px 15px; width: 200px;">
+                        <td style="padding: 12px 15px; width: 240px;">
                             ${generateSparkline(p.brand, p.name)}
                         </td>
                         <td>
@@ -1059,6 +1091,53 @@
             if (products.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-secondary); padding: 40px;">No products in this capacity range</td></tr>';
             }
+
+            // Setup sparkline tooltips
+            setTimeout(() => {
+                document.querySelectorAll('svg[id^="sparkline_"]').forEach(svg => {
+                    const tooltipId = svg.id + '_tooltip';
+                    const tooltip = document.getElementById(tooltipId);
+                    const tooltipContent = document.getElementById(tooltipId + '_content');
+                    const points = svg.querySelectorAll('.sparkline-point');
+
+                    if (!tooltip || !tooltipContent) return;
+
+                    svg.addEventListener('mousemove', (e) => {
+                        const rect = svg.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        // Find closest point
+                        let closestPoint = null;
+                        let minDist = Infinity;
+
+                        points.forEach(point => {
+                            const px = parseFloat(point.getAttribute('cx'));
+                            const py = parseFloat(point.getAttribute('cy'));
+                            const dist = Math.sqrt((x - px) ** 2 + (y - py) ** 2);
+
+                            if (dist < minDist && dist < 20) {
+                                minDist = dist;
+                                closestPoint = point;
+                            }
+                        });
+
+                        if (closestPoint) {
+                            const title = closestPoint.querySelector('title');
+                            if (title) {
+                                tooltipContent.textContent = title.textContent;
+                                tooltip.style.opacity = '1';
+                            }
+                        } else {
+                            tooltip.style.opacity = '0';
+                        }
+                    });
+
+                    svg.addEventListener('mouseleave', () => {
+                        tooltip.style.opacity = '0';
+                    });
+                });
+            }, 100);
         }
 
         // Render screenshots
