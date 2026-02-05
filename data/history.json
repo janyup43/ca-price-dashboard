@@ -3488,7 +3488,7 @@
     },
     {
       "date": "2026-02-05",
-      "timestamp": "2026-02-05T08:15:01.229180",
+      "timestamp": "2026-02-05T19:47:00.789951",
       "prices": {
         "Jackery|Explorer 5000 Plus": {
           "current_price": 3999,
@@ -3730,6 +3730,12 @@
           "discount_percent": 31.1,
           "source": "official"
         },
+        "EcoFlow|EcoFlow DELTA Pro Portable Power Station - Flash Sale": {
+          "current_price": 1999,
+          "original_price": 4499,
+          "discount_percent": 55.6,
+          "source": "official"
+        },
         "Anker|Anker SOLIX F3800 Plus Portable Power Station - 3,840Wh | 6,000W": {
           "current_price": 3699,
           "original_price": null,
@@ -3737,7 +3743,7 @@
           "source": "official"
         },
         "Anker|Anker SOLIX F3800 Portable Power Station - 3,840Wh | 6,000W": {
-          "current_price": 2799,
+          "current_price": 2999,
           "original_price": null,
           "discount_percent": null,
           "source": "official"
