@@ -4208,7 +4208,7 @@
     },
     {
       "date": "2026-02-07",
-      "timestamp": "2026-02-07T07:30:53.510069",
+      "timestamp": "2026-02-07T18:15:12.512055",
       "prices": {
         "Jackery|Explorer 5000 Plus": {
           "current_price": 3999,
@@ -4288,18 +4288,6 @@
           "discount_percent": 58.9,
           "source": "official"
         },
-        "EcoFlow|EcoFlow DELTA Pro Portable Power Station": {
-          "current_price": 2099,
-          "original_price": 4499,
-          "discount_percent": 53.3,
-          "source": "official"
-        },
-        "EcoFlow|EcoFlow DELTA 2 Portable Power Station": {
-          "current_price": 599,
-          "original_price": 1299,
-          "discount_percent": 53.9,
-          "source": "official"
-        },
         "EcoFlow|EcoFlow DELTA 2 Max Portable Power Station": {
           "current_price": 1199,
           "original_price": 2399,
@@ -4328,6 +4316,12 @@
           "current_price": 549,
           "original_price": 799,
           "discount_percent": 31.3,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow TRAIL Series DC Portable Power Station": {
+          "current_price": 159,
+          "original_price": null,
+          "discount_percent": null,
           "source": "official"
         },
         "EcoFlow|EcoFlow RIVER 3 Plus Portable Power Station": {
@@ -4366,10 +4360,22 @@
           "discount_percent": 33.3,
           "source": "official"
         },
+        "EcoFlow|EcoFlow DELTA Pro Portable Power Station": {
+          "current_price": 2099,
+          "original_price": 4499,
+          "discount_percent": 53.3,
+          "source": "official"
+        },
         "EcoFlow|EcoFlow DELTA Pro Ultra Whole-Home Backup Power (UL 9540 Certificated)": {
           "current_price": 5799,
           "original_price": 8598,
           "discount_percent": 32.6,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 2 Portable Power Station": {
+          "current_price": 599,
+          "original_price": 1299,
+          "discount_percent": 53.9,
           "source": "official"
         },
         "EcoFlow|EcoFlow DELTA 3 Portable Power Station": {
@@ -4430,6 +4436,12 @@
           "current_price": 1299,
           "original_price": 2599,
           "discount_percent": 50.0,
+          "source": "official"
+        },
+        "EcoFlow|DELTA 3 Classic + Free Bag - Flash Sale": {
+          "current_price": 619,
+          "original_price": 1199,
+          "discount_percent": 48.4,
           "source": "official"
         },
         "EcoFlow|EcoFlow DELTA 3 Ultra Plus Portable Power Station (3072Wh) - Flash Sale": {
