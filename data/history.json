@@ -4568,7 +4568,7 @@
     },
     {
       "date": "2026-02-08",
-      "timestamp": "2026-02-08T07:48:49.301335",
+      "timestamp": "2026-02-08T18:16:38.704377",
       "prices": {
         "Jackery|Explorer 5000 Plus": {
           "current_price": 3999,
@@ -4796,6 +4796,12 @@
           "current_price": 619,
           "original_price": 1199,
           "discount_percent": 48.4,
+          "source": "official"
+        },
+        "EcoFlow|EcoFlow DELTA 3 Max Plus (2048Wh) + DELTA 3 Max Plus Smart Extra Battery - Flash Sale": {
+          "current_price": 2299,
+          "original_price": 4298,
+          "discount_percent": 46.5,
           "source": "official"
         },
         "EcoFlow|EcoFlow DELTA 3 Ultra Plus Portable Power Station (3072Wh) - Flash Sale": {
